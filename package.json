@@ -1,5 +1,5 @@
 {
-  "name": "Portfolio",
+  "name": "portfolio",
   "version": "1.0.0",
   "description": "Portfolio. Personal and profesional projects.",
   "main": "index.js",
@@ -8,5 +8,13 @@
   },
   "keywords": [],
   "author": "Víctor Sánchez Martínez",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Visama396/visamalog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Visama396/visamalog/issues"
+  },
+  "homepage": "https://github.com/Visama396/visamalog#readme"
 }
