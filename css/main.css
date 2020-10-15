@@ -372,6 +372,7 @@ header ul li a {
         margin-bottom: 1.25em;
     }
     .skills .content .skillBx {
+        width: 100%;
         margin: 0.625em;
     }
     .work .content .workBx {
