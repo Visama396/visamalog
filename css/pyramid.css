@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Maven Pro', sans-serif;
+    background: rgb(190, 190, 190);
+}
+
+.board {
+    width: 90vw;
+    margin: 1em auto;
+    padding: 1.5em;
+    border: 1px solid black;
+    border-radius: 12px;
+    min-height: 90vh;
+    min-width: 90vw;
+    background: #73c743;
+}
+
+.card {
+    height: 10em;
+    width: 6.5em;
+
+    border: 2px solid black;
+    border-radius: 12px;
+
+    padding: .5em .8em;
+
+    background: white;
+}
+
+.card.clubs > .card_icons_s {
+    margin-top: 10px;
+    width: 2em;
+}
+
+.card.clubs > .card_icons_l {
+    width: 4em;
+}
+
+.card > .card_number::before {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.card.ace > .card_number::before {
+    content: "A";
+}
+
+.card.two > .card_number::before {
+    content: "2";
+}
+
+.card.three > .card_number::before {
+    content: "3";
+}
+
+.card.four > .card_number::before {
+    content: "4";
+}
+
+.card.five > .card_number::before {
+    content: "5";
+}
+
+.card.six > .card_number::before {
+    content: "6";
+}
+
+.card.seven > .card_number::before {
+    content: "7";
+}
+
+.card.eight > .card_number::before {
+    content: "8";
+}
+
+.card.nine > .card_number::before {
+    content: "9";
+}
+
+.card.ten > .card_number::before {
+    content: "10";
+}
+
+.card.jack > .card_number::before {
+    content: "J";
+}
+
+.card.queen > .card_number::before {
+    content: "Q";
+}
+
+.card.king > .card_number::before {
+    content: "K";
+}

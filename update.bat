@@ -1,2 +1,2 @@
-scp -r E:\Portfolio\* visamalog@visamalog.com:/home/visamalog/html
+scp -r D:\visamalog\* visamalog@visamalog.com:/home/visamalog/html
 pause

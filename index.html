@@ -1,152 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Víctor Sánchez</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visamalog</title>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/master.css" />
-    <link rel="icon" type="image/png" href="./assets/logo.png" />
-  </head>
-  <body>
-    <nav>
-      <div class="left-nav">
-        <img src="./assets/logo.png" alt="logo" width="48px" height="48px" class="nav-item" />
-        <a class="nav-item">Visamalog</a>
-      </div>
-      <div class="right-nav">
-        <a href="#home" class="nav-item">Home</a>
-        <a href="#contact" class="nav-item">Contact</a>
-      </div>
-    </nav>
-    <main>
-      <section id="home">
-        <video autoplay loop muted>
-          <source src="./assets/background.mp4" type="video/mp4" />
-        </video>
-        <h1><span id="typed"></span>I'm Victor</h1>
-        <h2>
-          Programmer<br>
-          &<br>
-          IT Tech
-        </h2>
-
-        <div class="projects-link">
-          <a href="#projects">
-            Projects
-            <img src="./assets/down-arrow.png" width="32px" height="32px" />
-          </a>
-
+    <link rel="stylesheet" href="./css/loader.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="loader-container active">
+        <h1 class="loader-title">Visamalog</h1>
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
+    </div>
+    <header>
+        <a href="https://www.visamalog.com" class="logo">Visamalog</a>
+        <div class="toggle"></div>
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="https://www.visamalog.com/cv.html">CV</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
 
-      </section>
-
-      <section id="projects">
-        <article class="project">
-          <h3>Block Builder</h3>
-        </article>
-        <article class="project">
-          <h3>Blockout</h3>
-        </article>
-        <article class="project">
-          <h3>Idionative</h3>
-        </article>
-        <article class="project">
-          <h3>Matrix</h3>
-        </article>
-      </section>
-
-      <section id="about">
-        <div class="picture-container">
-          <img src="./assets/me.jpg" alt="myself">
+    <section class="banner" id="home">
+        <div class="textBx">
+            <h2>Welcome! I'm<br><span>Víctor Sánchez.</span></h2>
+            <h3>Full-Stack Developer | IT Technician</h3>
+            <a href="#works" class="btn">Works</a>
         </div>
+    </section>
 
-        <div class="resume-container">
-          <h3>About me</h3>
-          <p>
-            My name is Víctor. I'm a programmer from Cartagena in Spain. <br>
-            When I was 11, I got my first PC, and I've been learning anything related to IT by myself.<br>
-            Until programming became my hobby and profession.<br>
-            <br>
-            I've been to London and Amsterdam, and still want to visit many other places too.<br>
-            I worked in Amsterdam as web programmer in 2019.<br>
-            And now I'm aiming to study Games programming in Berlin in 2020.
-          </p>
+    <section class="about" id="about">
+        <div class="heading">
+            <h2>About Me</h2>
         </div>
-      </section>
-
-      <section id="contact">
-        <div class="form-container">
-          <form class="" action="" method="post" autocomplete="off">
-            <h2>Get in touch!</h2>
-            <div class="input-group">
-              <label for="name">Name</label>
-              <input type="text" name="name" id="name" autocomplete="nope" required />
+        <div class="content">
+            <div class="contentBx w50">
+                <h3>Passionate technophile</h3>
+                <p>My name's Víctor. I'm a full-stack developer from Spain. I've worked in web development for 3 years. I always like trying new technologies and put them in practice.</p>
+                <p>I've worked in different projects like:</p>
+                <br>
+                <p>- Web platform for video recognition mobile app. (Learn more at <a href="http://connectvty.com/" target="_blank">ConnectTVTy</a>)</p>
+                <p>- Registration form for gym website with ability to sign with the mouse or screen touch.</p>
+                <p>- Web browser games in Javascript for Angular application.</p>
+                <p>- Desktop game in C#/Unity.</p>
+                <p>- Android apps with Flutter and Kotlin.</p>
+                <br>
+                <p>I've been to London, Amsterdam, Paris, and recently moved to Berlin. I want to learn many more things and work in amazing projects that can help other people.</p>
             </div>
-            <div class="input-group">
-              <label for="last_name">Last Name</label>
-              <input type="text" name="last_name" id="last_name" autocomplete="nope" required />
+            <div class="image w50">
+                <img src="assets/me2.png" alt="author image">
             </div>
-            <div class="input-group">
-              <label for="email">Email</label>
-              <input type="email" name="email" id="email" autocomplete="nope" required />
-            </div>
-            <div class="input-group">
-              <label for="message">Write your message:</label>
-              <textarea name="message" id="message" rows="4" cols="80"></textarea>
-            </div>
-            <input type="submit" name="Send" value="Send">
-          </form>
         </div>
+    </section>
 
-        <div class="sn-container">
-          <div class="sn-links">
-            <ul>
-              <li>
-                <a href="https://www.facebook.com/profile.php?id=100034144509465">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span class="fa fa-facebook" aria-hidden="true"></span>
-                </a>
-              </li>
-              <li>
-                <a href="https://twitter.com/visama396">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span class="fa fa-twitter" aria-hidden="true"></span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/visamalog/">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span class="fa fa-linkedin" aria-hidden="true"></span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/visama396/">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span class="fa fa-instagram" aria-hidden="true"></span>
-                </a>
-              </li>
-            </ul>
-          </div>
+    <section class="skills" id="skills">
+        <div class="heading white">
+            <h2>Skills</h2>
+            <p>My set of skills as a Full-Stack developer and IT Technician.</p>
         </div>
-      </section>
-    </main>
+        <div class="content">
+            <div class="skillBx">
+                <img src="./assets/icon1.png" alt="icon1">
+                <h2>Web Design</h2>
+                <p>I can create interactive interfaces.</p>
+            </div>
+            <div class="skillBx">
+                <img src="./assets/icon2.png" alt="icon1">
+                <h2>Web Development</h2>
+                <p>I can create interactive interfaces.</p>
+            </div>
+            <div class="skillBx">
+                <img src="./assets/icon3.png" alt="icon1">
+                <h2>Android Apps</h2>
+                <p>I can create interactive interfaces.</p>
+            </div>
+            <div class="skillBx">
+                <img src="./assets/icon4.png" alt="icon1">
+                <h2>Photography</h2>
+                <p>I can create interactive interfaces.</p>
+            </div>
+            <div class="skillBx">
+                <img src="./assets/icon5.png" alt="icon1">
+                <h2>Content Writing</h2>
+                <p>I can create interactive interfaces.</p>
+            </div>
+            <div class="skillBx">
+                <img src="./assets/icon6.png" alt="icon1">
+                <h2>Video Editing</h2>
+                <p>I can create interactive interfaces.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="work" id="works">
+        <div class="heading">
+            <h2>My Latest Work</h2>
+            <p>Working in web browser games.</p>
+        </div>
+        <div class="content">
+            <div class="workBx">
+                <img src="./assets/blockbuilder.png" alt="blockbuilder">
+            </div>
+            <div class="workBx">
+                <img src="./assets/blockout.png" alt="blockout">
+            </div>
+            <div class="workBx">
+                <img src="./assets/cutthecake.png" alt="cutthecake">
+            </div>
+            <div class="workBx">
+                <img src="./assets/steadyMoves.png" alt="steadyMoves">
+            </div>
+            <div class="workBx">
+                <img src="./assets/punje.png" alt="puntje">
+            </div>
+            <div class="workBx">
+                <img src="./assets/idionative.png" alt="idionative">
+            </div>
+        </div>
+        <div class="heading">
+            <a href="https://www.visamalog.com/personal" class="btn">View More</a>
+        </div>
+    </section>
 
-    <!--<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>-->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-    <script src="./js/master.js"></script>
-  </body>
+    <section class="contact" id="contact">
+        <div class="heading white">
+            <h2>Contact Me</h2>
+            <p>Hit me up If you have something to offer</p>
+        </div>
+        <div class="content">
+            <div class="contactInfo">
+                <h3>Contact Info</h3>
+                <div class="contactInfoBx">
+                    <div class="box">
+                        <div class="icon">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Address</h3>
+                            <p>Brüderstraße 37, Spandau<br>13595 Berlin, Germany</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Phone</h3>
+                            <p>+34678052268</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon">
+                            <i class="fa fa-envelope-o"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Email</h3>
+                            <p>visama396@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formBx">
+                <form action="">
+                    <h3>Hit me up!</h3>
+                    <input type="text" name="" placeholder="Full Name">
+                    <input type="email" name="" placeholder="Email">
+                    <textarea name="" id="" placeholder="Your Message"></textarea>
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+        </div>
+    </section>
+    <div class="copyright">
+        <p>Copyright © 2019 Visamalog. All Right Reserved.</p>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
 </html>

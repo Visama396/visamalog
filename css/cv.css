@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+}
+
+body {
+    font-family: 'Rubik', Helvetica, sans-serif;
+    font-size: 16px;
+    height: 100%;
+}
+
+main.container {
+    width: 80%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+}
+
+/* left section */
+
+#my-info {
+    width: 25%;
+    padding: 5% 5% 5%;
+    background: #303030;
+    -webkit-print-color-adjust: exact;
+    color: white;
+}
+
+#my-info .my-picture {
+    text-align: center;
+}
+
+#my-info .my-picture img {
+    width: 75%;
+}
+
+#personal-info h4 {
+    margin-top: 1em;
+}
+
+#personal-info a {
+    color: white;
+}
+
+#personal-info {
+    margin: 3em 0;
+}
+
+#skills h3,
+#languages h3 {
+    font-size: 1.3em;
+}
+
+#skills {
+    margin: 3em 0;
+}
+
+#skills p {
+    margin: .75em 0;
+}
+
+#languages {
+    margin: 3em 0;
+}
+
+#languages h4 {
+    margin-top: 1.5em;
+}
+
+hr {
+    height: 1px;
+    margin-left: 11%;
+    color: white;
+}
+
+hr::before {
+    content: "";
+    position: relative;
+    display: block;
+    top: -9px;
+    left: -30px;
+    width: 12px;
+    height: 12px;
+    border: 3px solid white;
+}
+
+/* Right section */
+
+
+#my-resume {
+    width: 75%;
+}
+
+/* objective section */
+
+#objective {
+    padding: 5%;
+    background: #EEE;
+}
+
+#objective h1 {
+    font-size: 1.8em;
+}
+
+#objective h2 {
+    font-size: 1.2em;
+}
+
+#objective p {
+    font-size: 1.25em;
+    margin: .8em 0;
+}
+
+/* experience and education sections */
+
+#experience, #education {
+    padding: 5% 5% 1% 5%;
+}
+
+#experience h3, #education h3 {
+    font-weight: 300;
+    margin-bottom: 2em;
+}
+
+#experience ul li, #education ul li {
+    margin-bottom: 3.5em;
+    list-style: none;
+}
+
+#experience ul li h1,
+#experience ul li h2, 
+#education ul li h1,
+#education ul li h2 {
+    margin-bottom: .4em;
+}
+
+#experience ul li h1,
+#education ul li h1 {
+    font-size: 1.8em;
+}
+
+#experience ul li h2,
+#education ul li h2 {
+    font-size: 1.2em;
+}
+
+#experience ul li p,
+#education ul li p {
+    margin: 1.5em 0;
+    font-size: 1.25em;
+}
+
+span.place {
+    font-weight: 300;
+    font-style: italic;
+}
+
+h2.time {
+    font-weight: 300;
+}
+
+@media only screen and (max-width: 992px) {
+    main.container {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 786px) {
+    main.container {
+        flex-direction: column;
+    }
+
+    #my-info {
+        width: 100%;
+    }
+
+    #my-info .my-picture img {
+        width: 45%;
+    }
+
+    hr {
+        margin-left: 4%;
+    }
+
+    #my-resume {
+        width: 100%;
+    }
+}
