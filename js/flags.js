@@ -71,5 +71,14 @@ document.onreadystatechange = function() {
         }
 
         setSearchCountryName();
+
+        let isLightMode = true;
+        let darkMode = document.querySelector('.toggleLightMode');
+        darkMode.addEventListener('click', () => {
+            this.body.classList.toggle('dark');
+            isLightMode = !isLightMode;
+            if (!isLightMode) darkMode.innerHTML = 'Light Mode';
+            else darkMode.innerHTML = 'Dark Mode';
+        });
     }
 };

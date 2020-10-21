@@ -8,6 +8,15 @@
     font-family: 'Maven Pro', sans-serif;
 }
 
+body.dark {
+    background: #222;
+    color: white;
+}
+
+.toggleLightMode:hover {
+    cursor: pointer;
+}
+
 header {
     text-align: center;
 }
@@ -30,8 +39,12 @@ header {
     display: flex;
     flex-direction: column;
     margin: 0 1em;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     transition: 0.5s linear;
+}
+
+body.dark .flag {
+    border: 2px solid #222;
 }
 
 .flag > img {
@@ -43,14 +56,21 @@ header {
 }
 
 .flag:hover {
-    border: 1px solid #222;
+    border: 2px solid #222;
     cursor: pointer;
 }
 
-.flag.incorrect {
-    border: 1px solid #FF0000;
+body.dark .flag:hover {
+    border: 2px solid white;
+    cursor: pointer;
 }
 
+body.dark .flag.incorrect,
+.flag.incorrect {
+    border: 2px solid #FF0000;
+}
+
+body.dark .flag.correct,
 .flag.correct {
-    border: 1px solid #00FF00;
+    border: 2px solid #00FF00;
 }
