@@ -24,26 +24,26 @@
         <a href="https://www.visamalog.com" class="logo">Visamalog</a>
         <div class="toggle"></div>
         <ul class="menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#works">Works</a></li>
-            <li><a href="https://www.visamalog.com/cv.html">CV</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" data-i18n="home">Home</a></li>
+            <li><a href="#about" data-i18n="about">About</a></li>
+            <li><a href="#skills" data-i18n="skills">Skills</a></li>
+            <li><a href="#works" data-i18n="works">Works</a></li>
+            <li><a href="https://www.visamalog.com/cv.html" data-i18n="resume">Resume</a></li>
+            <li><a href="#contact" data-i18n="contact">Contact</a></li>
         </ul>
     </header>
 
     <section class="banner" id="home">
         <div class="textBx">
-            <h2>Welcome! I'm<br><span>Víctor Sánchez.</span></h2>
-            <h3>Full-Stack Developer | IT Technician</h3>
-            <a href="#works" class="btn">Works</a>
+            <h2 data-i18n="welcome">Welcome! I'm<br><span>Víctor Sánchez.</span></h2>
+            <h3 data-i18n="job">Full-Stack Developer | IT</h3>
+            <a href="#works" class="btn" data-i18n="works">Works</a>
         </div>
     </section>
 
     <section class="about" id="about">
         <div class="heading">
-            <h2>About Me</h2>
+            <h2 data-i18n="about_me">About Me</h2>
         </div>
         <div class="content">
             <div class="contentBx w50">
@@ -67,7 +67,7 @@
 
     <section class="skills" id="skills">
         <div class="heading white">
-            <h2>Skills</h2>
+            <h2 data-i18n="skills">Skills</h2>
             <p><em>“Programming isn't about what you know; it's about what you can figure out.”</em></p>
         </div>
         <div class="content">
@@ -80,6 +80,11 @@
                 <i class="devicon-css3-plain"></i>
                 <h2>Web Design</h2>
                 <p>Interactive and accessible interfaces.</p>
+            </div>
+            <div class="skillBx">
+                <i class="devicon-nodejs-plain"></i>
+                <h2>Node.js</h2>
+                <p>Websites with React and Angular.</p>
             </div>
             <div class="skillBx">
                 <i class="devicon-android-plain"></i>
@@ -110,11 +115,6 @@
                 <i class="devicon-laravel-plain"></i>
                 <h2>Laravel</h2>
                 <p>Able to use PHP and Laravel.</p>
-            </div>
-            <div class="skillBx">
-                <i class="devicon-nodejs-plain"></i>
-                <h2>Node.js</h2>
-                <p>Websites with React and Angular.</p>
             </div>
             <div class="skillBx">
                 <i class="devicon-java-plain"></i>
@@ -150,13 +150,13 @@
             </div>
         </div>
         <div class="heading">
-            <a href="https://www.visamalog.com/personal" class="btn">View More</a>
+            <a href="https://www.visamalog.com/personal" class="btn" data-i18n="view_more">View More</a>
         </div>
     </section>
 
     <section class="contact" id="contact">
         <div class="heading white">
-            <h2>Contact</h2>
+            <h2 data-i18n="contact">Contact</h2>
             <p>Contact me If you have something to offer</p>
         </div>
         <div class="content">
@@ -203,8 +203,11 @@
             </div>
         </div>
     </section>
-    <div class="copyright">
-        <p>Copyright © 2019 Visamalog. All Right Reserved.</p>
+    <div class="languages">
+        <a class="lang" data-lang="en">EN</a>
+        <a class="lang" data-lang="de">DE</a>
+        <a class="lang" data-lang="es">ES</a>
+        <a class="lang" data-lang="ja">JA</a>
     </div>
     <script src="./js/main.js"></script>
 </body>

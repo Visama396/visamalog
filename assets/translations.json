@@ -1,0 +1,54 @@
+{
+    "en": {
+        "home": "Home",
+        "about": "About",
+        "skills": "Skills",
+        "works": "Works",
+        "resume": "Resume",
+        "contact": "Contact",
+        "welcome": "Welcome! I'm</i><br><span>Víctor Sánchez</span>",
+        "welcome2": ".",
+        "job": "Full-Stack Developer | IT",
+        "about_me": "About me",
+        "view_more": "View more"
+    },
+    "de": {
+        "home": "Startseite",
+        "about": "Über",
+        "skills": "Fähigkeiten",
+        "works": "Arbeiten",
+        "resume": "Lebenslauf",
+        "contact": "Kontact",
+        "welcome": "Willkommen! Ich heiße<br><span>Víctor Sánchez.</span>",
+        "welcome2": ".",
+        "job": "Full-Stack entwickler | IT",
+        "about_me": "Über mich",
+        "view_more": "Mehr sehen"
+    },
+    "ja": {
+        "home": "ホーム",
+        "about": "概要",
+        "skills": "芸域",
+        "works": "作品",
+        "resume": "履歴書",
+        "contact": "コンタクト",
+        "welcome": "よこそう! 私は<br><span>Víctor Sánchez</span>です。",
+        "welcome2": "です。",
+        "job": "Full-Stack開発者 | IT",
+        "about_me": "私について",
+        "view_more": "もっと"
+    },
+    "es": {
+        "home": "Inicio",
+        "about": "Sobre mí",
+        "skills": "Competencias",
+        "works": "Trabajos",
+        "resume": "Resumen",
+        "contact": "Contacto",
+        "welcome": "¡Hola! Soy<br><span>Vïctor Sánchez.</span>",
+        "welcome2": ".",
+        "job": "Desarrollador Full-Stack | Informático",
+        "about_me": "Sobre mí",
+        "view_more": "Ver más"
+    }
+}

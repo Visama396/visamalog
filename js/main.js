@@ -26,6 +26,17 @@ function toggleMenu() {
     menu.classList.toggle('active');
 }
 
+var translations;
+function translate(language) {
+    document.documentElement.lang = language;
+    if (translations != null) {
+        let elementsToTranslate = document.querySelectorAll('[data-i18n]');
+        for (let element of elementsToTranslate) {
+            element.innerHTML = translations[language][element.getAttribute('data-i18n')];
+        }
+    }
+}
+
 // alternative to DOMContentLoaded
 document.onreadystatechange = function() {
     if (document.readyState == "interactive") {
@@ -39,5 +50,28 @@ document.onreadystatechange = function() {
             link.addEventListener('click', toggleMenu);
         });
         menuToggle.addEventListener('click', toggleMenu);
+
+        // Fetch languages
+        fetch('../assets/translations.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("HTTP error" + response.status);
+            }
+            return response.json();
+        })
+        .then(json => {
+            translations = json;
+        })
+        .catch(err => {
+            console.log(err);
+        });
+
+        // Translation buttons
+        let translateButtons = document.querySelectorAll('.lang');
+        translateButtons.forEach(translateButton => {
+            translateButton.addEventListener('click', () => {
+                translate(translateButton.getAttribute('data-lang'));
+            });
+        });
     }
 }
