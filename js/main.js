@@ -41,7 +41,7 @@ function translate(language) {
 document.onreadystatechange = function() {
     if (document.readyState == "interactive") {
         // Application starts here
-        setTimeout(hideLoader, 3000);
+        setTimeout(hideLoader, 2000);
         window.addEventListener('scroll', scrollBehaviour);
 
         let menuToggle = document.querySelector('.toggle');

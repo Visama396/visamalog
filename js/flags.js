@@ -21,6 +21,8 @@ const FLAG_COUNT = FLAGS.length;
 
 var usedFlags = [];
 
+var score = 0;
+
 function createFlag() {
     let flag = document.createElement("article");
     flag.classList.add("flag");
@@ -39,6 +41,12 @@ function createFlag() {
     return flag;
 }
 
+function addScore() {
+    score++;
+    let scoreEl = document.querySelector('.score');
+    scoreEl.innerHTML = score;
+}
+
 function setSearchCountryName() {
     let searchCountry = document.querySelector('.searchCountry');
     let index = Math.floor(Math.random() * usedFlags.length);
@@ -52,6 +60,7 @@ function handleFlagClick(country, flag) {
     let searchCountry = document.querySelector('.searchCountry');
     if (country.toLowerCase() == searchCountry.innerHTML.toLowerCase()) {
         flag.classList.toggle('correct');
+        addScore();
         setSearchCountryName();
     } else {
         flag.classList.toggle('incorrect');
