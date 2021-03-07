@@ -23,18 +23,20 @@ section {
 .banner {
     position: relative;
     min-height: 100vh;
-    background: url(../assets/banner.png);
+    /*background: url(../assets/banner.png);
     background-size: cover;
-    background-position: center;
+    background-position: center;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: white;
+    background: #222;
 }
 
 .banner h2 {
-    font-size: 3em;
+    font-size: 2em;
     font-weight: 500;
-    line-height: 1.5em;
+    line-height: 1.4em;
 }
 
 .banner h2 i {
@@ -42,12 +44,12 @@ section {
 }
 
 .banner h2 span {
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: 700;
 }
 
 .banner h3 {
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: 700;
 }
 
@@ -65,6 +67,13 @@ section {
     font-weight: 500;
     min-width: 9.375em;
     text-align: center;
+    border-radius: 5px;
+    transition: .2s linear;
+}
+
+.btn:hover {
+    background: #111;
+    color: white;
 }
 
 header {
@@ -81,9 +90,9 @@ header {
 }
 
 header.sticky {
-    background: #fff;
+    background: #111;
     padding: 1.25em 4em;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
 header .logo {
@@ -92,7 +101,7 @@ header .logo {
     text-decoration: none;
     font-weight: 700;
     letter-spacing: 2px;
-    color: #000;
+    color: white;
 }
 
 header ul {
@@ -110,7 +119,7 @@ header ul li a {
     display: inline-block;
     margin: 0 .9em;
     text-decoration: none;
-    color: #000;
+    color: white;
 }
 
 .heading {
@@ -326,7 +335,7 @@ header ul li a {
 @media (max-width: 991px) {
     header,
     header.sticky {
-        background: #fff;
+        background: #111;
         padding: 1.25em 3.125em;
         z-index: 1000;
     }
@@ -363,7 +372,7 @@ header ul li a {
         background-repeat: no-repeat;
         background-size: 30px;
         cursor: pointer;
-        filter: invert(1);
+        filter: invert(0);
     }
     .toggle.active {
         background: url(../assets/close.png);
@@ -371,10 +380,6 @@ header ul li a {
         background-repeat: no-repeat;
         background-size: 25px;
         cursor: pointer;
-    }
-
-    header.sticky .toggle {
-        filter: invert(1);
     }
 
     section {

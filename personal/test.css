@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 2vh 10vw;
+
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(3px);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1vw;
+}
+
+nav > .menu > a {
+    margin: 0 1vw;
+}
+
+nav > .menu > a.active {
+    border-bottom: 2px solid white;
+}
+
+nav > .menu > a:hover {
+    border-bottom: 2px solid #4f81f3;
+}
+
+section {
+    height: 100vh;
+}
+
+section.banner {
+    background: black;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section.banner > h1 {
+    text-align: center;
+    font-size: 4.5vw;
+}
+
+section.banner > h1 > span.name {
+    background: linear-gradient(285.44deg, #D525E3, 8.3%, #4474E4 86.39%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+section.banner > p {
+    width: 50%;
+    text-align: center;
+}
