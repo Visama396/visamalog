@@ -70,6 +70,14 @@ body > section:not(.banner) > h1 {
     display: inline-block;
     border-bottom: 2px solid #4f81f3;
     font-size: 2.3rem;
+    margin-bottom: .8em;
+}
+
+body > section:not(.banner) > h5 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: grey;
+    font-style: italic;
 }
 
 body > section:nth-child(odd) {
@@ -152,7 +160,7 @@ section.about > .content {
     display: flex;
     justify-content: space-around;
 
-    margin-top: 5em;
+    margin-top: 4em;
 }
 
 section.about > .content > * {
@@ -179,7 +187,7 @@ section.skills > .content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 5em;
+    margin-top: 3em;
 }
 
 section.skills > .content > .skill {
@@ -208,3 +216,66 @@ section.skills > .content > .skill > i {
 
 /* WORKS */
 
+section.works > .content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section.works > .content > .work {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: #000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    padding: 3.5em;
+    border-radius: 12px;
+    text-align: center;
+    margin: 1em;
+    width: 400px;
+    height: 240px;
+    transition: background-color .7s linear;
+}
+
+section.works > .content > .work.digits {
+    background-image: url(/assets/digits.png);
+}
+
+section.works > .content > .work.stararchitect {
+    background-image: url(/assets/blockbuilder.png);
+}
+
+section.works > .content > .work.blockout {
+    background-image: url(/assets/blockout.png);
+}
+
+section.works > .content > .work.cutthecake {
+    background-image: url(/assets/cutthecake.png);
+}
+
+section.works > .content > .work.steadymoves {
+    background-image: url(/assets/steadyMoves.png);
+}
+
+section.works > .content > .work.puntje {
+    background-image: url(/assets/puntje.png);
+}
+
+section.works > .content > .work.matrix {
+    background-image: url(/assets/matrix.png);
+}
+
+section.works > .content > .work.blockout2 {
+    background-image: url(/assets/blockout2.png);
+}
+
+/* COPYRIGHT */
+
+section.copyright {
+    padding: 2em;
+    color: grey;
+}
