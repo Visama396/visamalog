@@ -6,8 +6,15 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    color: white;
     font-size: 20px;
+    
+    font-family: 'Poppins', sans-serif;
 }
 
 nav {
@@ -34,6 +41,8 @@ a {
     font-size: 1.2rem;
 }
 
+/* NAVBAR */
+
 nav > .menu > a {
     margin: 0 1em;
 }
@@ -46,15 +55,21 @@ nav > .menu > a:hover {
     border-bottom: 2px solid #4f81f3;
 }
 
-section {
+body > section {
     height: 100vh;
 }
 
-section.banner {
-    background: black;
-    color: white;
-    font-family: 'Poppins', sans-serif;
+body > section:nth-child(odd) {
+    background: #111;
+}
 
+body > section:nth-child(even) {
+    background: black;
+}
+
+/* BANNER */
+
+section.banner {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,13 +82,54 @@ section.banner > h1 {
 }
 
 section.banner > h1 > span.name {
-    background: linear-gradient(285.44deg, #D525E3, 8.3%, #4474E4 86.39%);
+    background: linear-gradient(290deg, #FC00FF, #00DBDE);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 section.banner > p {
-    font-size: 1.3rem;
-    width: 30%;
+    font-size: 1rem;
+    width: 40vw;
     text-align: center;
+    color: grey;
+    margin-top: 1.5em;
 }
+
+section.banner > .buttons {
+    margin-top: 4em;
+}
+
+section.banner > .buttons > a {
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    color: white;
+    padding: .7rem 2rem;
+    margin: 0 .8em;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+section.banner > .buttons > a:hover {
+    cursor: pointer;
+}
+
+section.banner > .buttons > .primary {
+    background: #4f81f3;
+}
+
+section.banner > .buttons > .primary:hover {
+    background: #3a71f1;
+}
+
+section.banner > .buttons > .secondary {
+    background: transparent;
+    border: 2px solid #4f81f3;
+}
+
+section.banner > .buttons > .secondary:hover {
+    background: #4f81f3;
+}
+
+/* ABOUT ME */
