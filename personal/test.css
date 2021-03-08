@@ -45,6 +45,7 @@ a {
 
 nav > .menu > a {
     margin: 0 1em;
+    padding: .4em 0;
 }
 
 nav > .menu > a.active {
@@ -56,7 +57,19 @@ nav > .menu > a:hover {
 }
 
 body > section {
-    height: 100vh;
+
+    padding: 5em 10em;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body > section:not(.banner) > h1 {
+    display: inline-block;
+    border-bottom: 2px solid #4f81f3;
+    font-size: 2.3rem;
 }
 
 body > section:nth-child(odd) {
@@ -70,6 +83,8 @@ body > section:nth-child(even) {
 /* BANNER */
 
 section.banner {
+    height: 100vh;
+    padding-top: 5em; /* Same margin of section.banner > .buttons */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -78,7 +93,7 @@ section.banner {
 
 section.banner > h1 {
     text-align: center;
-    font-size: 4.5rem;
+    font-size: 5rem;
 }
 
 section.banner > h1 > span.name {
@@ -89,7 +104,7 @@ section.banner > h1 > span.name {
 }
 
 section.banner > p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     width: 40vw;
     text-align: center;
     color: grey;
@@ -97,18 +112,17 @@ section.banner > p {
 }
 
 section.banner > .buttons {
-    margin-top: 4em;
+    margin-top: 5em;
 }
 
 section.banner > .buttons > a {
     border: none;
     outline: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: white;
     padding: .7rem 2rem;
-    margin: 0 .8em;
+    margin: 0 .6em;
     border-radius: 8px;
-    font-weight: 500;
 }
 
 section.banner > .buttons > a:hover {
@@ -133,3 +147,64 @@ section.banner > .buttons > .secondary:hover {
 }
 
 /* ABOUT ME */
+
+section.about > .content {
+    display: flex;
+    justify-content: space-around;
+
+    margin-top: 5em;
+}
+
+section.about > .content > * {
+    width: 40%;
+}
+
+section.about > .content > .image > img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+section.about > .content > .text > h2 {
+    display: inline-block;
+    margin-bottom: 1em;
+}
+
+section.about > .content > .text > p {
+    margin: 1em 0;
+}
+
+/* SKILLS */
+
+section.skills > .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5em;
+}
+
+section.skills > .content > .skill {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: #111;
+    padding: 3em;
+    border-radius: 12px;
+    text-align: center;
+    margin: 1em;
+    width: 400px;
+    transition: background-color .7s linear;
+}
+
+section.skills > .content > .skill:hover {
+    background: #4f81f3;
+}
+
+section.skills > .content > .skill > i {
+    font-size: 5rem;
+}
+
+/* WORKS */
+
