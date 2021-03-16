@@ -21,14 +21,14 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
 
     border-bottom: 1px solid rgba(255,255,255,0.1);
 
     display: flex;
     justify-content: space-between;
 
-    padding: 2vh 10vw;
+    padding: 1.2vw 10vw;
 
     background: rgba(0,0,0,0.5);
     backdrop-filter: blur(3px);
@@ -38,14 +38,14 @@ a {
     text-decoration: none;
     color: white;
     font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1vw;
 }
 
 /* NAVBAR */
 
 nav > .menu > a {
-    margin: 0 1em;
-    padding: .4em 0;
+    margin: 0 1vw;
+    padding: .4vw 0;
 }
 
 nav > .menu > a.active {
@@ -58,7 +58,7 @@ nav > .menu > a:hover {
 
 body > section {
 
-    padding: 5em 10em;
+    padding: 6em 10em;
     
     display: flex;
     flex-direction: column;
@@ -92,7 +92,7 @@ body > section:nth-child(even) {
 
 section.banner {
     height: 100vh;
-    padding-top: 5em; /* Same margin of section.banner > .buttons */
+    padding-top: 7em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -101,7 +101,8 @@ section.banner {
 
 section.banner > h1 {
     text-align: center;
-    font-size: 5rem;
+    /*font-size: 5rem;*/
+    font-size: 4.5vw;
 }
 
 section.banner > h1 > span.name {
@@ -112,7 +113,8 @@ section.banner > h1 > span.name {
 }
 
 section.banner > p {
-    font-size: 1.1rem;
+    /*font-size: 1.1rem;*/
+    font-size: .9vw;
     width: 40vw;
     text-align: center;
     color: grey;
@@ -120,16 +122,18 @@ section.banner > p {
 }
 
 section.banner > .buttons {
-    margin-top: 5em;
+    margin-top: 4vw;
 }
 
 section.banner > .buttons > a {
     border: none;
     outline: none;
-    font-size: 1.2rem;
+    /*font-size: 1.2rem;*/
+    font-size: 1vw;
     color: white;
-    padding: .7rem 2rem;
-    margin: 0 .6em;
+    /*padding: .7em 2em;*/
+    padding: .7vw 2.2vw;
+    margin: 0 .6vw;
     border-radius: 8px;
 }
 
@@ -160,7 +164,7 @@ section.about > .content {
     display: flex;
     justify-content: space-around;
 
-    margin-top: 4em;
+    margin-top: 3em;
 }
 
 section.about > .content > * {
@@ -219,6 +223,9 @@ section.skills > .content > .skill > i {
 section.works > .content {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
 }
 
 section.works > .content > .work {
@@ -232,13 +239,34 @@ section.works > .content > .work {
     background-repeat: no-repeat;
     background-position: center;
 
-    padding: 3.5em;
+    /*padding: 3.5em;*/
     border-radius: 12px;
     text-align: center;
     margin: 1em;
     width: 400px;
-    height: 240px;
+    height: 295px;
     transition: background-color .7s linear;
+}
+
+section.works > .content > .work > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    padding: 3.5em;
+
+    font-size: 1.1em;
+
+    transform: translateY(100%);
+    transition: transform 0.5s linear, opacity 0.5s linear;
+    opacity: 0;
+}
+
+section.works > .content > .work:hover > a {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 section.works > .content > .work.digits {
