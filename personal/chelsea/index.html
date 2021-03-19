@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
   </head>
   <body>
-    <p>Google Sheets API Quickstart</p>
+    <p>Vocabulary List Google Sheets API</p>
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize_button" style="display: none;">Authorize</button>
@@ -66,7 +66,7 @@
         if (isSignedIn) {
           authorizeButton.style.display = 'none';
           signoutButton.style.display = 'block';
-          listMajors();
+          listWords();
         } else {
           authorizeButton.style.display = 'block';
           signoutButton.style.display = 'none';
@@ -103,14 +103,14 @@
        * Print the names and majors of students in a sample spreadsheet:
        * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
        */
-      function listMajors() {
+      function listWords() {
         gapi.client.sheets.spreadsheets.values.get({
           spreadsheetId: '1t4oxnUbUVI_NqITxX_wUbxU6kYLbtpmJE87kXiLxHZU',
-          range: 'Verbs!A2:BG',
+          range: 'Verbs!A2',
         }).then(function(response) {
           var range = response.result;
           if (range.values.length > 0) {
-            appendPre('Name, Major:');
+            appendPre('Verbs:');
             for (i = 0; i < range.values.length; i++) {
               var row = range.values[i];
               // Print columns A and E, which correspond to indices 0 and 4.
