@@ -25,10 +25,6 @@ document.onreadystatechange = function() {
         window.onscroll = function() {
             var scrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
 
-            /*for (var link of navbarLinks) {
-                link.classList.remove('active');
-            }*/
-
             for (i in sections) {
                 if (sections[i] <= scrollPosition) {
                     document.querySelector('a.active').classList.remove('active');
