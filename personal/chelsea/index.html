@@ -106,7 +106,7 @@
       function listWords() {
         gapi.client.sheets.spreadsheets.values.get({
           spreadsheetId: '1t4oxnUbUVI_NqITxX_wUbxU6kYLbtpmJE87kXiLxHZU',
-          range: 'Verbs!A2',
+          range: 'Verbs!A2:J',
         }).then(function(response) {
           var range = response.result;
           if (range.values.length > 0) {
