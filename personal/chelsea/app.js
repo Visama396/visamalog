@@ -53,11 +53,11 @@ function updateSigninStatus(isSignedIn) {
     authorizeButton.style.display = 'none';
     signoutButton.style.display = 'block';
     listWords();
-    searchInput.disabled = true;
+    searchInput.disabled = false;
   } else {
     authorizeButton.style.display = 'block';
     signoutButton.style.display = 'none';
-    searchInput.disabled = false;
+    searchInput.disabled = true;
   }
 }
 
