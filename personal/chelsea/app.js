@@ -14,6 +14,8 @@ var signoutButton = document.getElementById('signout_button');
 
 var searchInput = document.getElementById('searchInput');
 
+var verbsList = [];
+
 /**
  *  On load, called to load the auth2 library and API client library.
  */
@@ -82,9 +84,11 @@ function handleSignoutClick(event) {
  * @param {string} message Text to be placed in pre element.
  */
 function appendPre(message) {
-  var pre = document.getElementById('content');
-  var textContent = document.createTextNode(message + '\n');
-  pre.appendChild(textContent);
+  var result = document.getElementById('result');
+  var newParagraph = document.createElement('p');
+  var textContent = document.createTextNode(message);
+  newParagraph.appendChild(textContent);
+  result.appendChild(newParagraph);
 }
 
 /**
@@ -102,6 +106,7 @@ function listWords() {
       for (i = 0; i < range.values.length; i++) {
         var row = range.values[i];
         console.log(typeof row);
+        verbsList.push(row);
         // Print columns
         //appendPre(row);
       }

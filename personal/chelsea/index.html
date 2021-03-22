@@ -12,14 +12,17 @@
 
     <main>
       <!--Add buttons to initiate auth sequence and sign out-->
-      <button id="authorize_button" style="display: none;">Authorize</button>
-      <button id="signout_button" style="display: none;">Sign Out</button>
+      <div class="auth-btn">
+        <button id="authorize_button" style="display: none;">Authorize</button>
+        <button id="signout_button" style="display: none;">Sign Out</button>
+      </div>
+      
       
       <div class="search-group">
         <input type="text" id="searchInput" placeholder="Search word">
       </div>
 
-      <pre id="content" style="white-space: pre-wrap;"></pre>
+      <div id="result"></div>
     </main>
 
     <footer>
