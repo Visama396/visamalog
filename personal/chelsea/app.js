@@ -98,11 +98,12 @@ function listWords() {
   }).then(function(response) {
     var range = response.result;
     if (range.values.length > 0) {
-      appendPre('Verbs:');
+      //appendPre('Verbs:');
       for (i = 0; i < range.values.length; i++) {
         var row = range.values[i];
+        console.log(typeof row);
         // Print columns
-        appendPre(row);
+        //appendPre(row);
       }
     } else {
       appendPre('No data found.');
