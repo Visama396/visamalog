@@ -105,7 +105,7 @@ function listWords() {
       //appendPre('Verbs:');
       for (i = 0; i < range.values.length; i++) {
         var row = range.values[i];
-        console.log(typeof row);
+        console.log(row);
         verbsList.push(row);
         // Print columns
         //appendPre(row);
