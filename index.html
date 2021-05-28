@@ -1,214 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visamalog</title>
-    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title>Portfolio</title>
+    <link rel="shortcut icon" href="/favicon.png" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">
-    <link rel="stylesheet" href="./css/loader.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <div class="loader-container active">
-        <h1 class="loader-title">Visamalog</h1>
-        <div class="loader">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-    <header>
-        <a href="https://www.visamalog.com" class="logo">Visamalog</a>
-        <div class="toggle"></div>
-        <ul class="menu">
-            <li><a href="#home" data-i18n="home">Home</a></li>
-            <li><a href="#about" data-i18n="about">About</a></li>
-            <li><a href="#skills" data-i18n="skills">Skills</a></li>
-            <li><a href="#works" data-i18n="works">Works</a></li>
-            <li><a href="./cv.html" data-i18n="resume">Resume</a></li>
-            <li><a href="#contact" data-i18n="contact">Contact</a></li>
-        </ul>
-    </header>
+    <nav>
 
+        <header>
+            <a href="https://visamalog.com">Visamalog</a>
+        </header>
+
+        <div class="menu">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">Über mich</a>
+            <a href="#skills">Fähigkeiten</a>
+            <a href="#works">Arbeiten</a>
+            <a href="#contact">Kontakt</a>
+        </div>
+        
+    </nav>
     <section class="banner" id="home">
-        <div class="textBx">
-            <h2 data-i18n="welcome">Welcome! I'm<br><span>Víctor Sánchez.</span></h2>
-            <h3 data-i18n="job">Full-Stack Developer | IT</h3>
-            <a href="#works" class="btn" data-i18n="works">Works</a>
+        <h1>
+            Hallo! Ich bin
+            <br>
+            <span class="name">Visama</span>
+            <br>
+            <span class="typed"></span> Entwickler
+        </h1>
+        <p>
+            Ich bin technikbegeistert und mag es, neue Technologien zu 
+            lernen und in praktischen Projekten einzusetzen. Ich liebe 
+            Tolkiens Bücher, und ich reise gerne und entdecke neue Reiseziele.
+        </p>
+        <div class="buttons">
+            <a href="/personal/" class="primary">Projects</a>
+            <a href="#contact" class="secondary">Lebenslauf</a>
         </div>
     </section>
-
-    <section class="skills" id="skills">
-        <div class="heading white">
-            <h2 data-i18n="skills">Skills</h2>
-            <p><em>“Programming isn't about what you know; it's about what you can figure out.”</em></p>
-        </div>
-        <div class="content">
-            <div class="skillBx">
-                <i class="devicon-webpack-plain"></i>
-                <h2>Web Development</h2>
-                <p>HTML5, CSS3 and JS.</p>
-            </div>
-            <div class="skillBx">
-                <i class="devicon-css3-plain"></i>
-                <h2>Web Design</h2>
-                <p>Interactive and accessible interfaces.</p>
-            </div>
-            <div class="skillBx">
-                <i class="devicon-nodejs-plain"></i>
-                <h2>Node.js</h2>
-                <p>Websites with React and Angular.</p>
-            </div>
-            <div class="skillBx">
-                <i class="devicon-android-plain"></i>
-                <h2>Android Development</h2>
-                <p>Experience with React Native, Flutter and Kotlin.</p>
-            </div>
-            <div class="skillBx">
-                <i class="devicon-csharp-plain"></i>
-                <h2>Game Development</h2>
-                <p>Experience with games in C# and Unity.</p>
-            </div>
-            <div class="skillBx">
-                <i class="devicon-linux-plain"></i>
-                <h2>Linux</h2>
-                <p>Configure and maintain servers.</p>
-            </div>
-            <div class="skillBx">
-                <i class="devicon-git-plain"></i>
-                <h2>Git</h2>
-                <p>Version control and code saving.</p>
-            </div>
-            <div class="skillBx">
-                <i class="devicon-django-plain"></i>
-                <h2>Django</h2>
-                <p>Able to use Python and Django.</p>
-            </div>
-            <div class="skillBx">
-                <i class="devicon-laravel-plain"></i>
-                <h2>Laravel</h2>
-                <p>Able to use PHP and Laravel.</p>
-            </div>
-            <div class="skillBx">
-                <i class="devicon-java-plain"></i>
-                <h2>Java</h2>
-                <p>Applications with Java.</p>
-            </div>
-        </div>
-    </section>
-
     <section class="about" id="about">
-        <div class="heading">
-            <h2 data-i18n="about_me">About Me</h2>
-        </div>
+        <h1>Über mich</h1>
         <div class="content">
-            <div class="contentBx w50">
-                <h3>Passionate technophile</h3>
-                <p>My name's Víctor. I'm a full-stack developer from Spain. I've worked in web development for 3 years. I always like trying new technologies and put them in practice.</p>
-                <p>I've worked in different projects like:</p>
-                <br>
-                <p>- Web platform for video recognition mobile app. (Learn more at <a href="http://connectvty.com/" target="_blank">ConnectTVTy</a>)</p>
-                <p>- Registration form for gym website with ability to sign with the mouse or screen touch.</p>
-                <p>- Web browser games in Javascript for Angular application.</p>
-                <p>- Desktop game in C#/Unity.</p>
-                <p>- Android apps with Flutter and Kotlin.</p>
-                <br>
-                <p>I've been to London, Amsterdam, Paris, and recently moved to Berlin. I want to learn many more things and work in amazing projects that can help other people.</p>
+            <div class="image">
+                <img src="/assets/me.jpg" />
             </div>
-            <div class="image w50">
-                <img src="assets/me2.png" alt="author image">
+            <div class="text">
+                <h2>Technology Geek</h2>
+                <p>
+                    Ich heiße Víctor Sánchez Martínez, bin ein spanischer Webentwickler, 
+                    der derzeit in Berlin lebt und nach neuen Möglichkeiten sucht. 
+                    Ich liebe es zu lernen, zu spielen, über Geschichte oder High Fantasy 
+                    zu lesen und zu reisen. Mein Lieblingsautor ist J. R. R. Tolkien. 
+                </p>
+                <p>
+                    Ich war unter anderem in Paris, London und Amsterdam, und ich würde 
+                    gerne noch mehr Orte besuchen.
+                </p>
             </div>
         </div>
     </section>
-
-    <section class="work" id="works">
-        <div class="heading">
-            <h2>My Latest Works</h2>
-            <p><em>“Experience is the name everyone gives to their mistakes.”</em></p>
-        </div>
+    <section class="skills" id="skills">
+        <h1>Fähigkeiten</h1>
+        <h5>“Programming isn't about what you know; it's about what you can figure out.”</h5>
         <div class="content">
-            <div class="workBx">
-                <img src="./assets/blockbuilder.png" alt="blockbuilder">
+            <div class="skill">
+                <i class="devicon-webpack-plain"></i>
+                <h3>Web Development</h3>
+                <p>HTML5, CSS3 and JS</p>
             </div>
-            <div class="workBx">
-                <img src="./assets/blockout.png" alt="blockout">
+            <div class="skill">
+                <i class="devicon-css3-plain"></i>
+                <h3>Web Design</h3>
+                <p>Interactive and accessible interfaces</p>
             </div>
-            <div class="workBx">
-                <img src="./assets/cutthecake.png" alt="cutthecake">
+            <div class="skill">
+                <i class="devicon-nodejs-plain"></i>
+                <h3>Node.js</h3>
+                <p>Websites with React and Angular</p>
             </div>
-            <div class="workBx">
-                <img src="./assets/steadyMoves.png" alt="steadyMoves">
+            <div class="skill">
+                <i class="devicon-linux-plain"></i>
+                <h3>Linux</h3>
+                <p>Able to work on Linux environment</p>
             </div>
-            <div class="workBx">
-                <img src="./assets/punje.png" alt="puntje">
+            <div class="skill">
+                <i class="devicon-git-plain"></i>
+                <h3>Git</h3>
+                <p>Version control and code saving</p>
             </div>
-            <div class="workBx">
-                <img src="./assets/idionative.png" alt="idionative">
+            <div class="skill">
+                <i class="devicon-laravel-plain"></i>
+                <h3>Laravel</h3>
+                <p>PHP and Laravel</p>
             </div>
-        </div>
-        <div class="heading">
-            <a href="https://www.visamalog.com/personal" class="btn" data-i18n="view_more">View More</a>
+            <div class="skill">
+                <i class="devicon-java-plain"></i>
+                <h3>Java</h3>
+                <p>Applications with Java FX</p>
+            </div>
+            <div class="skill">
+                <i class="devicon-django-plain"></i>
+                <h3>Django</h3>
+                <p>Python and Django</p>
+            </div>
+            <div class="skill">
+                <i class="devicon-android-plain"></i>
+                <h3>Android</h3>
+                <p>Flutter, Kotlin and React Native</p>
+            </div>
+            <div class="skill">
+                <i class="devicon-csharp-plain"></i>
+                <h3>Game Programming</h3>
+                <p>Games in C# with Unity</p>
+            </div>           
         </div>
     </section>
-
-    <section class="contact" id="contact">
-        <div class="heading white">
-            <h2 data-i18n="contact">Contact</h2>
-            <p>Contact me If you have something to offer</p>
-        </div>
+    <section class="works" id="works">
+        <h1>Arbeiten</h1>
+        <h5>“Experience is the name everyone gives to their mistakes.”</h5>
         <div class="content">
-            <div class="contactInfo">
-                <h3>Contact Info</h3>
-                <div class="contactInfoBx">
-                    <div class="box">
-                        <div class="icon">
-                            <i class="fa fa-map-marker"></i>
-                        </div>
-                        <div class="text">
-                            <h3>Address</h3>
-                            <p>Brüderstraße 37, Spandau<br>13595 Berlin, Germany</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="icon">
-                            <i class="fa fa-phone"></i>
-                        </div>
-                        <div class="text">
-                            <h3>Phone</h3>
-                            <p>+34678052268</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="icon">
-                            <i class="fa fa-envelope-o"></i>
-                        </div>
-                        <div class="text">
-                            <h3>Email</h3>
-                            <p>visama396@gmail.com</p>
-                        </div>
-                    </div>
+            <article class="work">
+                <div class="image">
+                    <img src="../assets/digits.png" alt="digits" />
+                </div>
+                <div class="link">
+                    <a href="#"><h3>Digits</h3></a>
+                </div>
+            </article>
+            <article class="work">
+                <div class="image">
+                    <img src="../assets/blockbuilder.png" alt="block builder" />
+                </div>
+                <div class="link">
+                    <a href="#"><h3>Block Builder</h3></a>
+                </div>
+                
+            </article>
+            <article class="work">
+                <div class="image">
+                    <img src="../assets/blockout2.png" alt="blockout" />
+                </div>
+                <div class="link">
+                    <a href="#"><h3>Blockout</h3></a>
+                </div>
+            </article>
+            <div class="work">
+                <div class="image">
+                    <img src="../assets/cutthecake.png" alt="cut the cake" />
+                </div>
+                <div class="link">
+                    <a href="#"><h3>Cut the Cake</h3></a>
                 </div>
             </div>
-            <div class="formBx">
-                <form action="">
-                    <h3>Hit me up!</h3>
-                    <input type="text" name="" placeholder="Full Name">
-                    <input type="email" name="" placeholder="Email">
-                    <textarea name="" id="" placeholder="Your Message"></textarea>
-                    <input type="submit" value="Send">
-                </form>
+            <div class="work">
+                <div class="image">
+                    <img src="../assets/steadyMoves.png" alt="steady moves">
+                </div>
+                <div class="link">
+                    <a href="#"><h3>Steady Moves</h3></a>
+                </div>
+            </div>
+            <div class="work">
+                <div class="image">
+                    <img src="../assets/puntje.png" alt="puntje">
+                </div>
+                <div class="link">
+                    <a href="#"><h3>Puntje</h3></a>
+                </div>
+            </div>
+            <div class="work">
+                <div class="image">
+                    <img src="../assets/matrix.png" alt="matrix">
+                </div>
+                <div class="link">
+                    <a href="#"><h3>Matrix</h3></a>
+                </div>
+            </div>
+            <div class="work">
+                <div class="image">
+                    <img src="../assets/blockout.png" alt="blockout" />
+                </div>
+                <div class="link">
+                    <a href="#"><h3>Blockout</h3></a>
+                </div>
             </div>
         </div>
     </section>
-    <div class="languages">
-        <a class="lang" data-lang="en">EN</a>
-        <a class="lang" data-lang="de">DE</a>
-        <a class="lang" data-lang="es">ES</a>
-        <a class="lang" data-lang="ja">JA</a>
-    </div>
-    <script src="./js/main.js"></script>
+    <section class="contact" id="contact">
+        <h1>Kontakt</h1>
+        <div class="content">
+            <address>
+                <h4>Email</h4>
+                <p>visamalog@gmail.com</p>
+                <h4>Phone</h4>
+                <p>+34 678 05 22 68</p>
+            </address>
+        </div>
+    </section>
+    <section class="copyright">
+        © 2021 copyright by Víctor with &heartsuit;
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script src="./text.js"></script>
 </body>
 </html>

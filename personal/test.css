@@ -252,8 +252,8 @@ section.works > .content > .work > div {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    width: 20vw;
+    height: 14vw;
 }
 
 section.works > .content > .work > .link {
@@ -263,7 +263,7 @@ section.works > .content > .work > .link {
 
     font-size: 2rem;
     transform: translateY(0);
-    transition: .8s linear;
+    transition: .4s linear;
 }
 
 section.works > .content > .work:hover > .link {
@@ -274,6 +274,18 @@ section.works > .content > .work > .image > img {
     object-fit: cover;
     width: 100%;
     height: 100%;
+}
+
+/* CONTACT */
+
+section.contact > .content > address {
+    font-style: normal;
+}
+
+section.contact > .content > address > h4 {
+    color: #4f81f3;
+    margin-top: 1rem;
+    margin-bottom: .15rem;
 }
 
 /* COPYRIGHT */
