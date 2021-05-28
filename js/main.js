@@ -1,77 +1,37 @@
-//document.addEventListener("DOMContentLoaded", function() {});
+var options = {
+    strings : ['Full-Stack', 'Unity', 'Flutter'],
+    typeSpeed : 150,
+    loop : true,
+    showCursor : false,
+};
 
-/**
- * Hides loader of the page
- */
-function hideLoader() {
-    let loaderContainer = document.querySelector(".loader-container");
-    loaderContainer.classList.remove("active");
-    loaderContainer.classList.add("hidden");
-    document.body.style.overflow = "initial";
-}
+var typed = new Typed('.typed', options);
 
-/**
- * Checks the height scrolled in the page
- */
-function scrollBehaviour() {
-    let header = document.querySelector('header');
-
-    header.classList.toggle('sticky', window.scrollY > 0);
-}
-
-function toggleMenu() {
-    let menuToggle = document.querySelector('.toggle');
-    let menu = document.querySelector('.menu');
-    menuToggle.classList.toggle('active');
-    menu.classList.toggle('active');
-}
-
-var translations;
-function translate(language) {
-    document.documentElement.lang = language;
-    if (translations != null) {
-        let elementsToTranslate = document.querySelectorAll('[data-i18n]');
-        for (let element of elementsToTranslate) {
-            element.innerHTML = translations[language][element.getAttribute('data-i18n')];
-        }
-    }
-}
-
-// alternative to DOMContentLoaded
 document.onreadystatechange = function() {
-    if (document.readyState == "interactive") {
-        // Application starts here
-        setTimeout(hideLoader, 1000);
-        window.addEventListener('scroll', scrollBehaviour);
+    if (document.readyState === 'complete') {
 
-        let menuToggle = document.querySelector('.toggle');
-        let menuLinks = document.querySelectorAll('header .menu a');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', toggleMenu);
-        });
-        menuToggle.addEventListener('click', toggleMenu);
+        var navbarLinks = document.querySelectorAll('nav > .menu > a');
 
-        // Fetch languages
-        fetch('../assets/translations.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("HTTP error" + response.status);
+        /* Navigator helper */
+        var pageSections = document.querySelectorAll('body > section');
+
+        var sections = {};
+        var i = 0;
+
+        Array.prototype.forEach.call(pageSections, function(e) {
+            sections[e.id] = e.offsetTop;
+        });        
+        
+        window.onscroll = function() {
+            var scrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
+
+            for (i in sections) {
+                if (sections[i] <= scrollPosition) {
+                    document.querySelector('a.active').classList.remove('active');
+                    document.querySelector(`a[href*=${i}]`).classList.add('active');
+                }
             }
-            return response.json();
-        })
-        .then(json => {
-            translations = json;
-        })
-        .catch(err => {
-            console.log(err);
-        });
 
-        // Translation buttons
-        let translateButtons = document.querySelectorAll('.lang');
-        translateButtons.forEach(translateButton => {
-            translateButton.addEventListener('click', () => {
-                translate(translateButton.getAttribute('data-lang'));
-            });
-        });
+        };
     }
 }
