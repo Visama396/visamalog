@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 20px;
+}
+
+body {
+    background: rgba(0,0,0,0.1);
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100vh;
+
+    background: #FEC468;
+}
+
+.loader > img {
+    width: 35%;
+}
+
+section > .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 .5rem;
+}
+
+section > .content > .top > h1 {
+    color: white;
+    text-shadow: 0px 0px 5px black;
+    font-size: 2.5vw;
+}
+
+section > .content > .bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section > .content > .bottom > .left {
+    text-align: left;
+}
+
+section > .content > .bottom > .right {
+    text-align: right;
+}
+
+section > .content > .bottom p {
+    color: white;
+    text-shadow: 0px 0px 5px black;
+    font-size: 1.2vw;
+}
+
+.drawing1 {
+    width: 100%;
+    height: 100vh;
+    background: url(./drawing1.png) no-repeat;
+    background-size: contain;
+    background-position: top center;
+}
+
+.drawing2 {
+    width: 100%;
+    height: 100vh;
+    background: url(./drawing2.png) no-repeat;
+    background-size: contain;
+    background-position: top center;
+}
+
+.drawing3 {
+    width: 100%;
+    height: 100vh;
+    background: url(./drawing3.png) no-repeat;
+    background-size: contain;
+    background-position: top center;
+}
+
+@media screen and (max-width: 800px) {
+    .loader > img {
+        width: 70%;
+    }
+
+    section > .content {
+        padding-top: 1rem;
+        justify-content: flex-start;
+    }
+
+    section > .content > .top > h1 {
+        text-align: center;
+    }
+
+    section > .content > .bottom {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section > .content > .bottom p {
+        font-size: 2.5vw;
+    }
+
+    section > .content > .bottom > .left,
+    section > .content > .bottom > .right {
+        text-align: center;
+    }
+
+    .drawing1,    
+    .drawing2,
+    .drawing3 {
+        height: 100%;
+        background: initial;
+    }
+}

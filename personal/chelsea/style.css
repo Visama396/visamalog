@@ -31,12 +31,6 @@ main {
     height: 100%;
 }
 
-.auth-btn {
-    display: flex;
-    justify-content: flex-end;
-    align-content: center;
-}
-
 .search-group {
     display: flex;
     justify-content: center;
