@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1vw;
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #232526, #414345);
+    background: linear-gradient(to left, #232526, #414345);
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.left-panel {
+    width: 20%;
+    height: 90%;
+    padding: 2rem 0;
+    background-color: rgba(255,255,255, .1);
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.left-panel > h1 {
+    font-size: 2.5rem;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.left-panel > .ascending, 
+.left-panel > .descending {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    width: 70%;
+}
+
+.left-panel > .ascending > h2,
+.left-panel > .descending > h2 {
+    font-size: 1.9rem;
+    color: white;
+    padding: .5rem 0;
+}
+
+.left-panel > .ascending > .arrow, 
+.left-panel > .descending > .arrow{
+    width: 80%;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: #FF1818;
+    box-shadow: 0px 0px 0px 8px rgba(255,255,255,0.3);
+}
+
+.left-panel > .ascending > .arrow > img,
+.left-panel > .descending > .arrow > img {
+    display: block;
+    width: 100%;
+    
+}
+
+.left-panel > .descending > .arrow > img {
+    transform: rotate(180deg);
+}
+
+#board {
+    width: 70%;
+    height: 90%;
+
+    background-color: rgba(255,255,255, .4);
+}

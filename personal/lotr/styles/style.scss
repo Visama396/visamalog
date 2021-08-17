@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
+
+@font-face {
+    font-family: 'Hermann Heavy';
+    src: url(../assets/Hermann-Heavy.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1vw;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: hsl(204, 100%, 5%);
+    > main {
+
+        > section {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 80% 1fr;
+            grid-template-rows: 1fr 80% 1fr;
+            gap: 0px 0px;
+            grid-template-areas: 
+                ". Header ."
+                ". Content ."
+                ". . Next";
+
+            > h1 {
+                grid-area: Header;
+
+                text-align: center;
+                font-family: 'Hermann Heavy';
+                font-size: 5rem;
+                color: white;
+                padding: 2rem 0;
+            }
+
+            > article {
+                grid-area: Content;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+
+                padding: 1.5rem 0;
+                > p {
+                    line-height: 1.5;
+                    font-weight: 500;
+                    font-size: 3.5rem;
+                    color: white;
+                }
+            }
+
+            > footer {
+                grid-area: Next;
+                background: linear-gradient(
+                    to right,
+                    hsl(98, 100%, 62%),
+                    hsl(204, 100%, 59%)
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                > a {
+                    display: inline-block;
+                    color: white;
+                    font-size: 3rem;
+                    font-weight: 700;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

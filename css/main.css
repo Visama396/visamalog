@@ -8,12 +8,11 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 20px;
+    font-size: 1vw;
 }
 
 body {
     color: white;
-    
     font-family: 'Poppins', sans-serif;
 }
 
@@ -28,7 +27,7 @@ nav {
     display: flex;
     justify-content: space-between;
 
-    padding: 1.2vw 10vw;
+    padding: 1.2rem 10rem;
 
     background: rgba(0,0,0,0.5);
     backdrop-filter: blur(3px);
@@ -38,19 +37,19 @@ a {
     text-decoration: none;
     color: white;
     font-family: 'Poppins', sans-serif;
-    font-size: 1vw;
+    font-size: 1.1rem;
 }
 
 /* NAVBAR */
 
 nav > header > a {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: bold;
 }
 
 nav > .menu > a {
-    margin: 0 1vw;
-    padding: .4vw 0;
+    margin: 0 1rem;
+    padding: .4rem 0;
 
     border-bottom: 2px solid transparent;
     
@@ -66,7 +65,6 @@ nav > .menu > a:hover {
 }
 
 body > section {
-
     padding: 6rem 10rem;
     
     display: flex;
@@ -110,8 +108,7 @@ section.banner {
 
 section.banner > h1 {
     text-align: center;
-    /*font-size: 5rem;*/
-    font-size: 4.5vw;
+    font-size: 5rem;
 }
 
 section.banner > h1 > span.name {
@@ -123,26 +120,24 @@ section.banner > h1 > span.name {
 
 section.banner > p {
     /*font-size: .75rem;*/
-    font-size: 1.1vw;
-    width: 40vw;
+    font-size: 1.2rem;
+    width: 45%;
     text-align: center;
     color: grey;
     margin-top: 1.5rem;
 }
 
 section.banner > .buttons {
-    margin-top: 4vw;
+    margin-top: 4rem;
 }
 
 section.banner > .buttons > a {
     border: none;
     outline: none;
-    /*font-size: 1.2rem;*/
-    font-size: 1.2vw;
+    font-size: 1.2rem;
     color: white;
-    /*padding: .7em 2em;*/
-    padding: .7vw 2.2vw;
-    margin: 0 .6vw;
+    padding: .7em 2em;
+    margin: 0 .6rem;
     border-radius: 8px;
 }
 
@@ -173,7 +168,7 @@ section.about > .content {
     display: flex;
     justify-content: space-around;
 
-    margin-top: 3rem;
+    margin-top: 4rem;
 }
 
 section.about > .content > * {
@@ -182,16 +177,16 @@ section.about > .content > * {
 
 section.about > .content > .image > img {
     width: 100%;
-    border-radius: 20px;
+    border-radius: 12px;
 }
 
 section.about > .content > .text > h2 {
-    display: inline-block;
-    margin-bottom: 1rem;
+    font-size: 2.2rem;
 }
 
 section.about > .content > .text > p {
     margin: 1rem 0;
+    font-size: 1.2rem;
 }
 
 /* SKILLS */
@@ -216,7 +211,7 @@ section.skills > .content > .skill {
     text-align: center;
     margin: 1rem;
     width: 400px;
-    transition: background-color .7s linear;
+    transition: background-color .3s ease;
 }
 
 section.skills > .content > .skill:hover {
@@ -225,6 +220,7 @@ section.skills > .content > .skill:hover {
 
 section.skills > .content > .skill > i {
     font-size: 5rem;
+    margin-bottom: .5rem;
 }
 
 /* WORKS */
@@ -245,7 +241,7 @@ section.works > .content > .work {
 
     margin: 2rem;
 
-    border-radius: 15px;
+    border-radius: 12px;
 }
 
 section.works > .content > .work > div {
@@ -263,7 +259,7 @@ section.works > .content > .work > .link {
 
     font-size: 2rem;
     transform: translateY(0);
-    transition: .4s linear;
+    transition: transform .4s ease-in;
 }
 
 section.works > .content > .work:hover > .link {
@@ -294,3 +290,10 @@ section.copyright {
     padding: 2rem;
     color: grey;
 }
+
+@media screen and (max-width: 980px) {
+    html {
+        font-size: 1.5vw;
+    }
+}
+
