@@ -1,11 +1,14 @@
 var options = {
     strings : ['Full-Stack', 'Unity', 'Flutter'],
-    typeSpeed : 150,
+    typeSpeed : 250,
+    startDelay: 500,
     loop : true,
-    showCursor : false,
+    //showCursor : false,
 };
 
 var typed = new Typed('.typed', options);
+
+AOS.init();
 
 document.onreadystatechange = function() {
     if (document.readyState === 'complete') {

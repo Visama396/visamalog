@@ -6,49 +6,52 @@
     <title>Portfolio</title>
     <link rel="shortcut icon" href="/favicon.png" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <nav>
-
-        <header>
+        <header data-aos="fade-down">
             <a href="https://visamalog.com">Visamalog</a>
         </header>
 
-        <div class="menu">
+        <div class="menu-btn">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+        <div class="menu" data-aos="fade-down">
             <a href="#home" class="active">Home</a>
             <a href="#about">Über mich</a>
             <a href="#skills">Fähigkeiten</a>
             <a href="#works">Arbeiten</a>
             <a href="#contact">Kontakt</a>
         </div>
-        
     </nav>
     <section class="banner" id="home">
-        <h1>
-            Hallo! Ich bin
+        <h1 data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000">
+            <span>Hallo! Ich bin</span>
             <br>
             <span class="name">Visama</span>
             <br>
-            <span class="typed"></span> Entwickler
+            <div><span class="typed"></span></div>
+            <span>Entwickler</span>
         </h1>
-        <p>
+        <p data-aos="fade-down" data-aos-delay="500" data-aos-duration="1000">
             Ich bin technikbegeistert und mag es, neue Technologien zu 
             lernen und in praktischen Projekten einzusetzen. Ich liebe 
             Tolkiens Bücher, und ich reise gerne und entdecke neue Reiseziele.
         </p>
-        <div class="buttons">
+        <div class="buttons" data-aos="fade-down" data-aos-delay="1000" data-aos-duration="1000">
             <a href="/personal/" class="primary">Projects</a>
             <a href="#contact" class="secondary">Lebenslauf</a>
         </div>
     </section>
     <section class="about" id="about">
-        <h1>Über mich</h1>
+        <h1 data-aos="fade-down">Über mich</h1>
+        <h5 data-aos="fade-down" data-aos-delay="200">“Love what you do, do what you love”</h5>
         <div class="content">
-            <div class="image">
-                <img src="/assets/me.jpg" />
-            </div>
-            <div class="text">
+            <div class="text" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
                 <h2>Technology Geek</h2>
                 <p>
                     Ich heiße Víctor Sánchez Martínez, bin ein spanischer Webentwickler, 
@@ -61,67 +64,70 @@
                     gerne noch mehr Orte besuchen.
                 </p>
             </div>
+            <div class="image" data-aos="fade-left" data-aos-delay="1100" data-aos-duration="1000">
+                <img src="/assets/me.jpg" />
+            </div>
         </div>
     </section>
     <section class="skills" id="skills">
-        <h1>Fähigkeiten</h1>
-        <h5>“Programming isn't about what you know; it's about what you can figure out.”</h5>
+        <h1 data-aos="fade-down">Fähigkeiten</h1>
+        <h5 data-aos="fade-down" data-aos-delay="200">“Programming isn't about what you know; it's about what you can figure out.”</h5>
         <div class="content">
             <div class="skill">
-                <i class="devicon-webpack-plain"></i>
-                <h3>Web Development</h3>
-                <p>HTML5, CSS3 and JS</p>
+                <i class="devicon-webpack-plain" data-aos="fade-down"></i>
+                <h3 data-aos="fade-down">Web Development</h3>
+                <p data-aos="fade-down">HTML5, CSS3 and JS</p>
             </div>
             <div class="skill">
-                <i class="devicon-css3-plain"></i>
-                <h3>Web Design</h3>
-                <p>Interactive and accessible interfaces</p>
+                <i class="devicon-css3-plain" data-aos="fade-down"></i>
+                <h3 data-aos="fade-down">Web Design</h3>
+                <p data-aos="fade-down">Interactive and accessible interfaces</p>
             </div>
             <div class="skill">
-                <i class="devicon-nodejs-plain"></i>
-                <h3>Node.js</h3>
-                <p>Websites with React and Angular</p>
+                <i class="devicon-nodejs-plain" data-aos="fade-down"></i>
+                <h3 data-aos="fade-down">Node.js</h3>
+                <p data-aos="fade-down">Websites with React and Angular</p>
             </div>
             <div class="skill">
-                <i class="devicon-linux-plain"></i>
-                <h3>Linux</h3>
-                <p>Able to work on Linux environment</p>
+                <i class="devicon-linux-plain" data-aos="fade-down"></i>
+                <h3 data-aos="fade-down">Linux</h3>
+                <p data-aos="fade-down">Able to work on Linux environment</p>
             </div>
             <div class="skill">
-                <i class="devicon-git-plain"></i>
-                <h3>Git</h3>
-                <p>Version control and code saving</p>
+                <i class="devicon-git-plain" data-aos="fade-down"></i>
+                <h3 data-aos="fade-down">Git</h3>
+                <p data-aos="fade-down">Version control and code saving</p>
             </div>
             <div class="skill">
-                <i class="devicon-laravel-plain"></i>
-                <h3>Laravel</h3>
-                <p>PHP and Laravel</p>
+                <i class="devicon-laravel-plain" data-aos="fade-down"></i>
+                <h3 data-aos="fade-down">Laravel</h3>
+                <p data-aos="fade-down">PHP and Laravel</p>
             </div>
             <div class="skill">
-                <i class="devicon-java-plain"></i>
-                <h3>Java</h3>
-                <p>Applications with Java FX</p>
+                <i class="devicon-java-plain" data-aos="fade-down"></i>
+                <h3 data-aos="fade-down">Java</h3>
+                <p data-aos="fade-down">Applications with Java FX</p>
             </div>
             <div class="skill">
-                <i class="devicon-django-plain"></i>
-                <h3>Django</h3>
-                <p>Python and Django</p>
+                <i class="devicon-django-plain" data-aos="fade-down"></i>
+                <h3 data-aos="fade-down">Django</h3>
+                <p data-aos="fade-down">Python and Django</p>
             </div>
             <div class="skill">
-                <i class="devicon-android-plain"></i>
-                <h3>Android</h3>
-                <p>Flutter, Kotlin and React Native</p>
+                <i class="devicon-android-plain" data-aos="fade-down"></i>
+                <h3 data-aos="fade-down">Android</h3>
+                <p data-aos="fade-down">Flutter, Kotlin and React Native</p>
             </div>
             <div class="skill">
-                <i class="devicon-csharp-plain"></i>
-                <h3>Game Programming</h3>
-                <p>Games in C# with Unity</p>
+                <i class="devicon-csharp-plain" data-aos="fade-down"></i>
+                <h3 data-aos="fade-down">Game Programming</h3>
+                <p data-aos="fade-down">Games in C# with Unity</p>
             </div>           
         </div>
     </section>
     <section class="works" id="works">
-        <h1>Arbeiten</h1>
-        <h5>“Experience is the name everyone gives to their mistakes.”</h5>
+        <h1 data-aos="fade-down">Arbeiten</h1>
+        <h5 data-aos="fade-down" data-aos-delay="200">“Experience is the name everyone gives to their mistakes.”</h5>
         <div class="content">
             <article class="work">
                 <div class="image">
@@ -191,13 +197,13 @@
         </div>
     </section>
     <section class="contact" id="contact">
-        <h1>Kontakt</h1>
+        <h1 data-aos="fade-down">Kontakt</h1>
         <div class="content">
             <address>
-                <h4>Email</h4>
-                <p>visamalog@gmail.com</p>
-                <h4>Phone</h4>
-                <p>+34 678 05 22 68</p>
+                <h4 data-aos="fade-down">Email</h4>
+                <p data-aos="fade-down">visamalog@gmail.com</p>
+                <h4 data-aos="fade-down">Phone</h4>
+                <p data-aos="fade-down">+34 678 05 22 68</p>
             </address>
         </div>
     </section>
@@ -205,6 +211,7 @@
         © 2021 copyright by Víctor with &heartsuit;
     </section>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="/js/main.js"></script>
 </body>
 </html>
