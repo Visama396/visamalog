@@ -51,6 +51,10 @@ nav > header > a {
     font-weight: bold;
 }
 
+nav > .menu-btn {
+    display: none;
+}
+
 nav > .menu > a {
     margin: 0 1rem;
     padding: .4rem 0;
@@ -115,6 +119,10 @@ section.banner > h1 {
     font-size: 5rem;
 }
 
+section.banner > h1 > div {
+    display: inline-block;
+}
+
 section.banner > h1 > span.name {
     background: linear-gradient(290deg, #FC00FF, #00DBDE);
     background-clip: text;
@@ -128,11 +136,14 @@ section.banner > p {
     width: 45%;
     text-align: center;
     color: grey;
-    margin-top: 1.5rem;
+    margin: 1.5rem 0;
 }
 
 section.banner > .buttons {
-    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 section.banner > .buttons > a {
@@ -140,9 +151,9 @@ section.banner > .buttons > a {
     outline: none;
     font-size: 1.2rem;
     color: white;
-    padding: .7em 2em;
-    margin: 0 .6rem;
-    border-radius: 8px;
+    padding: .7rem 2rem;
+    margin: 0 1.5rem;
+    border-radius: 5px;
 }
 
 section.banner > .buttons > .primary {
@@ -316,8 +327,29 @@ section.copyright {
         flex-direction: column;
     }
 
+    nav > header {
+        display: flex;
+    }
+
     nav > header > a {
         font-size: 3rem;
+    }
+
+    nav > .menu-btn {
+        width: 45px;
+        height: 58px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav> .menu-btn > span {
+        display: block;
+        width: 100%;
+        height: 5px;
+        background-color: white;
+        cursor: pointer;
     }
 
     nav > .menu {
@@ -344,13 +376,28 @@ section.copyright {
         line-height: 1.5;
     }
 
+    .typed-cursor {
+        margin-left: .2rem;
+    }
+
     section.banner {
+        height: 100%;
         justify-content: center;
-        padding-top: 4rem;
+
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+    }
+
+    section.banner > h1 {
+        font-size: 6rem;
+    }
+
+    section.banner > h1 > div {
+        display: block;
     }
 
     section.banner > p {
-        font-size: 2rem;
+        font-size: 2.5rem;
         width: 100%;
     }
 
