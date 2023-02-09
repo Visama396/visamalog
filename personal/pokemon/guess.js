@@ -165,7 +165,7 @@ function updateDex(poke) {
         
 
         let typeIcon = document.createElement("img");
-        typeIcon.src = `./${element.type.name}.svg`;
+        typeIcon.src = `${element.type.name}.svg`;
         typeIcon.alt = `${element.type.name} type Pokémon`;
         newType.appendChild(typeLabel);
         newType.appendChild(typeIcon);
