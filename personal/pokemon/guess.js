@@ -10,6 +10,8 @@ var weight = document.querySelector("#weight ");
 
 var genus = document.querySelector("#genus");
 
+
+
 function getRandomID() {
     return Math.floor(Math.random() * 1008) + 1;
 }
@@ -40,6 +42,67 @@ function getRandomPokemon() {
     .then((data) => updateInfo(data));
 }
 
+function getTypePoke(type) {
+    let result = "";
+    switch(type) {
+        case "normal":
+            result = type;
+            break;
+        case "fire":
+            result = "fuego";
+            break;
+        case "water":
+            result = "agua";
+            break;
+        case "grass":
+            result = "planta";
+            break;
+        case "electric":
+            result = "eléctrico";
+            break;
+        case "ice":
+            result = "hielo";
+            break;
+        case "fighting":
+            result = "lucha";
+            break;
+        case "posion":
+            result = "veneno";
+            break;
+        case "ground":
+            result = "tierra";
+            break;
+        case "flying":
+            result = "volador";
+            break;
+        case "psychic":
+            result = "psíquico";
+            break;
+        case "bug":
+            result = "bicho";
+            break;
+        case "rock":
+            result = "roca";
+            break;
+        case "ghost":
+            result = "fantasma";
+            break;
+        case "dark":
+            result = "siniestro";
+            break;
+        case "dragon":
+            result = "dragón";
+            break;
+        case "steel":
+            result = "acero";
+            break;
+        case "fairy":
+            result = "hada";
+            break;
+    }
+    return result;
+}
+
 function updateInfo(poke) {
 
     poke.genera.forEach((element) => {
@@ -48,6 +111,10 @@ function updateInfo(poke) {
         }
 
         if (element.language.name == "en" && element.language.name == "") {
+            genus.innerText = element.genus;
+        }
+
+        if (element.language.name == "de" && element.language.name == "") {
             genus.innerText = element.genus;
         }
     });
@@ -94,7 +161,8 @@ function updateDex(poke) {
 
         let typeLabel = document.createElement("span");
         newType.classList.add(element.type.name);
-        typeLabel.innerText = element.type.name;
+        typeLabel.innerText = getTypePoke(element.type.name);
+        
 
         let typeIcon = document.createElement("img");
         typeIcon.src = `./${element.type.name}.svg`;
