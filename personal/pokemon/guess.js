@@ -1,6 +1,46 @@
-var default_language = "en";
+var default_language = "es";
 var pokemon_name = "";
 var tries = 3;
+var pokemon_types = {
+    "es": {
+        "normal": "normal",
+        "fire": "fuego",
+        "water": "agua",
+        "grass": "planta",
+        "electric": "eléctrico",
+        "ice": "hielo",
+        "fighting": "lucha",
+        "poison": "veneno",
+        "ground": "tierra",
+        "flying": "volador",
+        "psychic": "psíquico",
+        "rock": "roca",
+        "ghost": "fantasma",
+        "dark": "siniestro",
+        "dragon": "dragón",
+        "steel": "acero",
+        "fairy": "hada"
+    },
+    "de": {
+        "normal": "normal",
+        "fire": "feuer",
+        "water": "wasser",
+        "grass": "pflanze",
+        "electric": "elektro",
+        "ice": "eis",
+        "fighting": "kampf",
+        "poison": "gift",
+        "ground": "boden",
+        "flying": "flug",
+        "psychic": "psycho",
+        "rock": "gestein",
+        "ghost": "geist",
+        "dark": "unlicht",
+        "dragon": "drache",
+        "steel": "stahl",
+        "fairy": "fee"
+    }
+};
 
 var dex = document.querySelector("#id");
 var type = document.querySelector("#type");
@@ -44,61 +84,10 @@ function getRandomPokemon() {
 
 function getTypePoke(type) {
     let result = "";
-    switch(type) {
-        case "normal":
-            result = type;
-            break;
-        case "fire":
-            result = "fuego";
-            break;
-        case "water":
-            result = "agua";
-            break;
-        case "grass":
-            result = "planta";
-            break;
-        case "electric":
-            result = "eléctrico";
-            break;
-        case "ice":
-            result = "hielo";
-            break;
-        case "fighting":
-            result = "lucha";
-            break;
-        case "posion":
-            result = "veneno";
-            break;
-        case "ground":
-            result = "tierra";
-            break;
-        case "flying":
-            result = "volador";
-            break;
-        case "psychic":
-            result = "psíquico";
-            break;
-        case "bug":
-            result = "bicho";
-            break;
-        case "rock":
-            result = "roca";
-            break;
-        case "ghost":
-            result = "fantasma";
-            break;
-        case "dark":
-            result = "siniestro";
-            break;
-        case "dragon":
-            result = "dragón";
-            break;
-        case "steel":
-            result = "acero";
-            break;
-        case "fairy":
-            result = "hada";
-            break;
+    if (default_language == "en") {
+        result = type;
+    } else {
+        result = pokemon_types[default_language][type];
     }
     return result;
 }
