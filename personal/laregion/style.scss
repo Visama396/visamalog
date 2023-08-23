@@ -11,6 +11,7 @@ html {
   font-size: 20px;
   > body {
     h1 {
+      display: inline-block;
       font-size: 2rem;
       font-weight: 700;
     }
@@ -20,6 +21,24 @@ html {
       margin: auto;
 
       > header {
+        > div.title {
+          display: flex;
+          > input#reparto {
+            margin-left: .5rem;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid black;
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            &:valid {
+              color: green;
+            }
+            &:invalid {
+              color: red;
+            }
+          }
+        }
         > div.subtitle {
           display: flex;
           flex-direction: row;
