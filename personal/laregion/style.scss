@@ -29,12 +29,52 @@ html {
       }
 
       > .repartos {
-        border-radius: 8px;
-        border: solid black 1px;
         > div {
           transition: .3s;
           &:hover {
             background: lightgray;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 786px) {
+  html {
+    > body {
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+      }
+  
+      > main {
+        width: 100%;
+        margin: 0 0.5rem;
+  
+        > header {
+          > div.subtitle {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid;
+
+            > .total {
+              font-weight: 600;
+            }
+          }
+        }
+  
+        > .repartos {
+          > div {
+            transition: none;
+            &:hover {
+              background: white;
+            }
           }
         }
       }

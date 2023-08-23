@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  background: hsl(204deg, 100%, 5%);
+  background: hsl(204, 100%, 5%);
 }
 body > main > nav {
   position: fixed;

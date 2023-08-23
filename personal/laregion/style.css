@@ -23,13 +23,38 @@ html > body > main > header > div.subtitle {
   justify-content: space-between;
   align-items: baseline;
 }
-html > body > main > .repartos {
-  border-radius: 8px;
-  border: solid black 1px;
-}
 html > body > main > .repartos > div {
   transition: 0.3s;
 }
 html > body > main > .repartos > div:hover {
   background: lightgray;
+}
+
+@media (max-width: 786px) {
+  html > body h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  html > body h2 {
+    font-size: 1.25rem;
+  }
+  html > body > main {
+    width: 100%;
+    margin: 0 0.5rem;
+  }
+  html > body > main > header > div.subtitle {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid;
+  }
+  html > body > main > header > div.subtitle > .total {
+    font-weight: 600;
+  }
+  html > body > main > .repartos > div {
+    transition: none;
+  }
+  html > body > main > .repartos > div:hover {
+    background: white;
+  }
 }/*# sourceMappingURL=style.css.map */
