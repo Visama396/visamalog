@@ -14,27 +14,16 @@ html > body h1 {
   font-size: 2rem;
   font-weight: 700;
 }
-html > body > main {
-  width: 80%;
-  margin: auto;
-}
 html > body > main > header > div.title {
   display: flex;
 }
-html > body > main > header > div.title > input#reparto {
+html > body > main > header > div.title > select#reparto {
   margin-left: 0.5rem;
   outline: none;
   border: none;
-  border-bottom: 1px solid black;
   font-size: 2rem;
   font-weight: 700;
   font-family: "Poppins", sans-serif;
-}
-html > body > main > header > div.title > input#reparto:valid {
-  color: green;
-}
-html > body > main > header > div.title > input#reparto:invalid {
-  color: red;
 }
 html > body > main > header > div.subtitle {
   display: flex;
@@ -42,38 +31,18 @@ html > body > main > header > div.subtitle {
   justify-content: space-between;
   align-items: baseline;
 }
+html > body > main > header > div.subtitle > #fecha {
+  border: none;
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+html > body > main > header > div.subtitle > #fecha:hover {
+  cursor: pointer;
+}
 html > body > main > .repartos > div {
   transition: 0.3s;
 }
 html > body > main > .repartos > div:hover {
   background: lightgray;
-}
-
-@media (max-width: 786px) {
-  html > body h1 {
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
-  html > body h2 {
-    font-size: 1.25rem;
-  }
-  html > body > main {
-    width: 100%;
-    margin: 0 0.5rem;
-  }
-  html > body > main > header > div.subtitle {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid;
-  }
-  html > body > main > header > div.subtitle > .total {
-    font-weight: 600;
-  }
-  html > body > main > .repartos > div {
-    transition: none;
-  }
-  html > body > main > .repartos > div:hover {
-    background: white;
-  }
 }/*# sourceMappingURL=style.css.map */

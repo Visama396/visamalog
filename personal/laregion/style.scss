@@ -17,26 +17,18 @@ html {
     }
 
     > main {
-      width: 80%;
-      margin: auto;
 
       > header {
         > div.title {
           display: flex;
-          > input#reparto {
+          > select#reparto {
             margin-left: .5rem;
             outline: none;
             border: none;
-            border-bottom: 1px solid black;
             font-size: 2rem;
             font-weight: 700;
             font-family: 'Poppins', sans-serif;
-            &:valid {
-              color: green;
-            }
-            &:invalid {
-              color: red;
-            }
+            
           }
         }
         > div.subtitle {
@@ -44,6 +36,17 @@ html {
           flex-direction: row;
           justify-content: space-between;
           align-items: baseline;
+
+          > #fecha {
+            border: none;
+            font-size: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
         }
       }
 
@@ -52,48 +55,6 @@ html {
           transition: .3s;
           &:hover {
             background: lightgray;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 786px) {
-  html {
-    > body {
-      h1 {
-        font-size: 1.5rem;
-        font-weight: 700;
-      }
-
-      h2 {
-        font-size: 1.25rem;
-      }
-  
-      > main {
-        width: 100%;
-        margin: 0 0.5rem;
-  
-        > header {
-          > div.subtitle {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 1rem;
-            border-bottom: 1px solid;
-
-            > .total {
-              font-weight: 600;
-            }
-          }
-        }
-  
-        > .repartos {
-          > div {
-            transition: none;
-            &:hover {
-              background: white;
-            }
           }
         }
       }
