@@ -2,7 +2,13 @@ var repartosElem
 var fechaElem
 var totalElem
 var repartoElem
+var inicioElem
+var userElem
+var passwordElem
 
+var users
+var user
+var password
 var repartoID
 var fecha = new Date()
 var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
@@ -53,20 +59,49 @@ async function loadDeliveries() {
   }  
 }
 
+async function loadLogIn() {
+  const response = await fetch("./users.json")
+  users = await response.json()
+}
+
+function checkUsers() {
+  for(const user of users) {
+    if (user.user != userElem.value) continue
+    if (user.user == userElem.value && user.pass == passwordElem.value) {
+      loggedin()
+    }
+  }
+}
+
+function loggedin() {
+  let elem = document.querySelector("#login")
+  elem.classList.remove("loggedout")
+  elem.classList.add("loggedin")
+}
+
 document.onreadystatechange = function() {
   if (document.readyState == "complete") {
     // Start application
-    
+    loadLogIn()
+
     repartosElem = document.querySelector(".repartos")
     fechaElem = document.querySelector("#fecha")
     totalElem = document.querySelector(".total")
     repartoElem = document.querySelector("#reparto")
+    inicioElem = document.querySelector("#inicio")
+    userElem = document.querySelector("#user")
+    passwordElem = document.querySelector("#password")
 
     loadOptions()
     
     repartoElem.onchange = (event) => {
       repartoID = repartoElem.value
       loadDeliveries()
+    }
+
+    inicioElem.onsubmit = (event) => {
+      checkUsers()
+      return false
     }
     
     fechaElem.value = `${fecha.getFullYear()}-${(fecha.getMonth()+1 < 10)?("0"+(fecha.getMonth()+1)):(fecha.getMonth()+1)}-${fecha.getDate()}`
