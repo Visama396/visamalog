@@ -6,7 +6,6 @@ var inicioElem
 var userElem
 var passwordElem
 
-var canbelogged = false
 var users
 var user
 var password
@@ -84,9 +83,8 @@ function loggedin() {
 document.onreadystatechange = function() {
   if (document.readyState == "complete") {
     // Start application
-    loadLogIn()
+    /*loadLogIn()
 
-    if (canbelogged) {
       repartosElem = document.querySelector(".repartos")
       fechaElem = document.querySelector("#fecha")
       totalElem = document.querySelector(".total")
@@ -112,10 +110,8 @@ document.onreadystatechange = function() {
       fechaElem.onchange = function(event) {
         fecha = new Date(event.target.value)
         loadDeliveries()
-      }
-    }
-
-    
+      }*/
+       
     
   }
 }
