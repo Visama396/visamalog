@@ -1,7 +1,7 @@
 import 'dotenv/config'
 import { connect } from '@planetscale/database'
 
-console.log(`process.env: ${rocess.env.PUBLIC_DB_HOST}`)
+console.log(`process.env: ${process.env.PUBLIC_DB_HOST}`)
 console.log(`meta.env: ${import.meta.env.PUBLIC_DB_HOST}`)
 
 const config = {
