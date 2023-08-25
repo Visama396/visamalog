@@ -115,7 +115,7 @@ document.onreadystatechange = function() {
       }
     }
 
-    console.log(process.env.DB_HOST)
+    
     
   }
 }
