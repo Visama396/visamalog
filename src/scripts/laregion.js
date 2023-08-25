@@ -1,13 +1,9 @@
-import 'dotenv/config'
 import { connect } from '@planetscale/database'
 
-console.log("running laregion.js")
-console.log(`meta.env: ${import.meta.env.PUBLIC_DB_HOST}`)
-
 const config = {
-  host: import.meta.env.PUBLIC_DB_HOST ?? process.env.PUBLIC_DB_HOST,
-  username: import.meta.env.PUBLIC_DB_USER ?? process.env.PUBLIC_DB_USER,
-  password: import.meta.env.PUBLIC_DB_PASSWORD ?? process.env.PUBLIC_DB_PASSWORD
+  host: import.meta.env.PUBLIC_DB_HOST,
+  username: import.meta.env.PUBLIC_DB_USER,
+  password: import.meta.env.PUBLIC_DB_PASSWORD
 }
 
 const conn = connect(config)
