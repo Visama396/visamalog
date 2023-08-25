@@ -1,6 +1,30 @@
 [
     {
+<<<<<<< HEAD
+<<<<<<< HEAD
         "user": "mamomu",
-        "pass": "mamomu982244"
+        "pass": "mamomu982244",
+        "repartos": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 129],
+        "editar": true
+    },
+    {
+        "user": "visama",
+        "pass": "Visama396",
+        "repartos": [24],
+        "editar": false
+    },
+    {
+        "user": "noemi",
+        "pass": "nomair",
+        "repartos": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 129],
+        "editar": true
+=======
+        "user": "laregion",
+        "pass": "0Pass&Word1"
+>>>>>>> parent of eea77bc (updated user)
+=======
+        "user": "laregion",
+        "pass": "0Pass&Word1"
+>>>>>>> parent of eea77bc (updated user)
     }
 ]

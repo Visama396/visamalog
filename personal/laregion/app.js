@@ -6,26 +6,28 @@ var inicioElem
 var userElem
 var passwordElem
 
+var canbelogged = false
 var users
 var user
 var password
 var repartoID
+var options
 var fecha = new Date()
 var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
 var dias = ["domingo", "lunes", "martes", "miercoles", "jueves", "viernes", "sabado"]
 var total = 0
 
 function loadOptions() {
-  for(let i = 4; i < 32; i++) {
-    const opt = document.createElement("option")
-    opt.value = i;
-    opt.innerText = i;
+  for (const option of options) {
+    const op = document.createElement("option")
+    op.value = option;
+    op.innerText = option;
 
-    repartoElem.appendChild(opt)
+    repartoElem.appendChild(op);
   }
 
-  repartoElem.value = 24
-  repartoID = 24
+  repartoElem.value = options[1];
+  repartoID = options[1];
 }
 
 function showDeliveries(deliveries) {
@@ -84,31 +86,36 @@ document.onreadystatechange = function() {
     // Start application
     loadLogIn()
 
-    repartosElem = document.querySelector(".repartos")
-    fechaElem = document.querySelector("#fecha")
-    totalElem = document.querySelector(".total")
-    repartoElem = document.querySelector("#reparto")
-    inicioElem = document.querySelector("#inicio")
-    userElem = document.querySelector("#user")
-    passwordElem = document.querySelector("#password")
+    if (canbelogged) {
+      repartosElem = document.querySelector(".repartos")
+      fechaElem = document.querySelector("#fecha")
+      totalElem = document.querySelector(".total")
+      repartoElem = document.querySelector("#reparto")
+      inicioElem = document.querySelector("#inicio")
+      userElem = document.querySelector("#user")
+      passwordElem = document.querySelector("#password")
+  
+      loadOptions()
+      
+      repartoElem.onchange = (event) => {
+        repartoID = repartoElem.value
+        loadDeliveries()
+      }
+  
+      inicioElem.onsubmit = (event) => {
+        checkUsers()
+        return false
+      }
+      
+      fechaElem.value = `${fecha.getFullYear()}-${(fecha.getMonth()+1 < 10)?("0"+(fecha.getMonth()+1)):(fecha.getMonth()+1)}-${fecha.getDate()}`
+  
+      fechaElem.onchange = function(event) {
+        fecha = new Date(event.target.value)
+        loadDeliveries()
+      }
+    }
 
-    loadOptions()
     
-    repartoElem.onchange = (event) => {
-      repartoID = repartoElem.value
-      loadDeliveries()
-    }
-
-    inicioElem.onsubmit = (event) => {
-      checkUsers()
-      return false
-    }
     
-    fechaElem.value = `${fecha.getFullYear()}-${(fecha.getMonth()+1 < 10)?("0"+(fecha.getMonth()+1)):(fecha.getMonth()+1)}-${fecha.getDate()}`
-
-    fechaElem.onchange = function(event) {
-      fecha = new Date(event.target.value)
-      loadDeliveries()
-    }
   }
 }
