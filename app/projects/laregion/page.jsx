@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { connect } from '@planetscale/database'
 import { useRouter } from 'next/navigation'
 
+console.log(process.env.DB_HOST)
+
 export default function LaRegionPage () {
   const config = {
     host: process.env.DB_HOST,
