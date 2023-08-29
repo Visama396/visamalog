@@ -3,13 +3,13 @@ import { useState } from 'react'
 import { connect } from '@planetscale/database'
 import { useRouter } from 'next/navigation'
 
-console.log(process.env.DB_HOST)
+console.log(process.env.NEXT_DB_HOST)
 
 export default function LaRegionPage () {
   const config = {
-    host: process.env.DB_HOST,
-    username: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD
+    host: process.env.NEXT_DB_HOST,
+    username: process.env.NEXT_DB_USERNAME,
+    password: process.env.NEXT_DB_PASSWORD
   }
 
   const [formData, setFormData] = useState({
