@@ -24,7 +24,7 @@ export const metadata = {
     description: 'Portfolio of Víctor Sánchez Martínez',
     creator: '@visama396',
     creatorId: '3317846446',
-    images: ['https://nextjs.org/og.png']
+    images: ['/public/images/favicon2.png']
   }
 }
 
