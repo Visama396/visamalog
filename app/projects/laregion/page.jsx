@@ -19,8 +19,12 @@ export default function LaRegionPage () {
 
   async function checkAuth (username) {
     const conn = connect(config)
-    const result = await conn.execute(`SELECT * FROM repartos_users where user = '${username}'`)
+    const query = 'SELECT * FROM repartos_users WHERE user = :name'
+    const params = {
+      name: username
+    }
 
+    const result = await conn.execute(query, params)
     return result.rows[0]
   }
 
@@ -43,6 +47,7 @@ export default function LaRegionPage () {
     }
     if (formData.password !== user.password) {
       console.log('Password is incorrect')
+      return
     }
 
     // Send to dashboard
