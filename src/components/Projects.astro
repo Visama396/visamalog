@@ -1,0 +1,55 @@
+---
+import NextJsIcon from './icons/Nextjs.astro'
+import TailwindIcon from './icons/Tailwind.astro'
+import AstroIcon from './icons/AstroSVG.astro'
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJsIcon,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: TailwindIcon,
+  },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-black text-white",
+    icon: AstroIcon,
+  }
+}
+
+const PROJECTS = [
+  {
+    title: 'Pokédex',
+    description: 'Interactive Pokédex that uses PokéAPI so people can search important information for building teams.',
+    link: '#',
+    github: 'https://github.com/Visama396/PokedexWeb',
+    image: "/projects/pokedex.webp",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND]
+  },
+]
+---
+
+{
+  PROJECTS.map(({ title, description, tags, image }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 flex-row mb-2">
+        {tags.map(tag => (
+          <li>
+            <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img class="rounded shadow-2xl shadow-white/10 " src={image} alt={`Render of project ${image}`}>
+    </article>
+  ))
+
+}
