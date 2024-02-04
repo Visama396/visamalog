@@ -5,6 +5,7 @@ import SocialPill from '../components/SocialPill.astro'
 import Experience from '../components/Experience.astro'
 import SectionContainer from '../components/SectionContainer.astro'
 import Projects from '../components/Projects.astro'
+import About from '../components/About.astro'
 
 // Icons
 import LinkedInIcon from '../components/icons/LinkedIn.astro'
@@ -12,6 +13,7 @@ import GitHubIcon from '../components/icons/GitHub.astro'
 import MailIcon from '../components/icons/Mail.astro'
 import WorkIcon from '../components/icons/Work.astro'
 import CodeIcon from '../components/icons/Code.astro'
+import UserShareIcon from '../components/icons/UserShare.astro'
 ---
 
 <Layout title="Porfolio of Visama - Web Developer and Programmer with 3 years of experience" description='Hire visama to create your web or mobile application. Web Developer.'>
@@ -56,6 +58,13 @@ import CodeIcon from '../components/icons/Code.astro'
 				Projects
 			</h2>
 			<Projects />
+		</SectionContainer>
+		<SectionContainer id="about">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80">
+				<UserShareIcon class="size-7" />
+				About me
+			</h2>
+			<About />
 		</SectionContainer>
 	</main>
 </Layout>

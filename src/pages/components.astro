@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro"
+
+import SectionContainer from "../components/SectionContainer.astro"
+import Badge from "../components/Badge.astro"
+import LinkedInIcon from "../components/icons/LinkedIn.astro"
+import SocialPill from "../components/SocialPill.astro"
+---
+
+<Layout
+  title="Design System Portfolio Visamalog"
+  description="List of Components of my portfolio"
+>
+  <SectionContainer class="py-44 pb-32 flex flex-col gap-y-10">
+    <article>
+      <h1 class="mb-4 text-xl font-semibold">&lt;Badge /&gt;</h1>
+      <Badge>Available for hire</Badge>
+    </article>
+
+    <article>
+      <h1 class="mb-4 text-xl font-semibold">&lt; SocialPill /&gt;</h1>
+      
+      <div class="flex">
+        <SocialPill href="https://linkedin.com/in/visamalog">
+          <LinkedInIcon class="size-4 md:size-6" />
+          LinkedIn
+        </SocialPill>
+      </div>
+    </article>
+  </SectionContainer>
+</Layout>
