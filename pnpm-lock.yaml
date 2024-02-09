@@ -20,9 +20,6 @@ dependencies:
   tailwindcss:
     specifier: ^3.4.1
     version: 3.4.1
-  typed.js:
-    specifier: ^2.1.0
-    version: 2.1.0
   typescript:
     specifier: ^5.3.3
     version: 5.3.3
@@ -3632,10 +3629,6 @@ packages:
   /type-fest@2.19.0:
     resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==}
     engines: {node: '>=12.20'}
-    dev: false
-
-  /typed.js@2.1.0:
-    resolution: {integrity: sha512-bDuXEf7YcaKN4g08NMTUM6G90XU25CK3bh6U0THC/Mod/QPKlEt9g/EjvbYB8x2Qwr2p6J6I3NrsoYaVnY6wsQ==}
     dev: false
 
   /typesafe-path@0.2.2:
