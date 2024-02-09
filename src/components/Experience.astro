@@ -1,33 +1,34 @@
 ---
-import type { Code, Debug } from "astro:components"
 import ExperienceItem from "./ExperienceItem.astro"
-import type { Image } from "astro:assets"
 
 const EXPERIENCE = [
   {
     date: 'October 2019 to February 2021',
     title: 'Web Developer - Imaginanet',
+    company: 'Imaginanet',
     description: 'Development of web-browser and mobile compatible games with Javascript and Playcanvas. Use of VSC like GitHub.',
     link: 'https://www.imaginanet.com/juegos-html5.html'
   },
   {
     date: 'April 2019 to June 2019',
     title: 'Web Developer - Stampwallet',
+    company: 'Stampwallet',
     description: 'Responsible of improving and maintaining the code of old projects to adapt to new technologies and software updates. Learn new tech and creating new projects.',
     link: 'https://www.puntje.nl/'
   },
   {
     date: 'October 2018 to March 2019',
     title: 'Web Developer - Biyectiva',
+    company: 'Biyectiva',
     description: 'Programming web platform for an API used in a mobile application. Learning of Angular and Laravel to use along variated libraries for graphs and timelines.',
     link: 'https://www.biyectiva.com/es/success-story/connectvty'
   },
 ]
 ---
-<ol class="relative border-s border-gray-200 ml-3">
+<ol class="relative mt-16">
   {
     EXPERIENCE.map(experience => (
-      <li class="mb-10 ms-4">
+      <li class="">
         <ExperienceItem {...experience} />
       </li>
     ))
