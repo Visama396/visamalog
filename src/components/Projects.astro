@@ -10,7 +10,7 @@ import AstroIcon from '@/components/icons/AstroSVG.astro'
 import LinkIcon from '@/components/icons/Link.astro'
 import ReactIcon from '@/components/icons/React.astro'
 import ElectronIcon from '@/components/icons/Electron.astro'
-
+import SvelteIcon from '@/components/icons/Svelte.astro'
 
 const TAGS = {
   NEXT: {
@@ -37,6 +37,11 @@ const TAGS = {
     name: "Electron",
     class: "bg-[#2F3242] text-white",
     icon: ElectronIcon,
+  },
+  SVELTE: {
+    name: "Svelte",
+    class: "bg-[#2F3242] text-white",
+    icon: SvelteIcon,
   }
 }
 
@@ -48,6 +53,14 @@ const PROJECTS = [
     github: 'https://github.com/Visama396/PokedexWeb',
     image: "/projects/pokedex.webp",
     tags: [TAGS.ASTRO, TAGS.TAILWIND]
+  },
+  {
+    title: 'Viplay',
+    description: 'Music player with my favourite playlists. It\'s a clone of Spotify made with Astro using React and Svelte components. Zustand for the store and tried to use Typescript as much as I could.',
+    link: 'https://viplay.visamalog.com/',
+    github: 'https://github.com/Visama396/viplay',
+    image: "/projects/viplay.webp",
+    tags: [TAGS.ASTRO, TAGS.REACT, TAGS.SVELTE, TAGS.TAILWIND]
   },
   {
     title: 'VisamaNote',
