@@ -11,6 +11,8 @@ import LinkIcon from '@/components/icons/Link.astro'
 import ReactIcon from '@/components/icons/React.astro'
 import ElectronIcon from '@/components/icons/Electron.astro'
 import SvelteIcon from '@/components/icons/Svelte.astro'
+import ReactNativeIcon from '@/components/icons/React.astro'
+import AppwriteIcon from '@/components/icons/Appwrite.astro'
 
 const TAGS = {
   NEXT: {
@@ -42,10 +44,28 @@ const TAGS = {
     name: "Svelte",
     class: "bg-[#2F3242] text-white",
     icon: SvelteIcon,
+  },
+  REACTNATIVE: {
+    name: "React Native",
+    class: "bg-[#003159] text-white",
+    icon: ReactNativeIcon,
+  },
+  APPWRITE: {
+    name: "Appwrite",
+    class: "bg-black text-white",
+    icon: AppwriteIcon
   }
 }
 
 const PROJECTS = [
+  {
+    title: 'Aora',
+    description: 'Mobile application that servers as a place for users to upload their own content and for others to watch.',
+    link: 'https://github.com/Visama396/PokedexWeb',
+    github: 'https://github.com/Visama396/PokedexWeb',
+    image: '/projects/aora.webp',
+    tags: [TAGS.REACTNATIVE, TAGS.APPWRITE, TAGS.TAILWIND]
+  },
   {
     title: 'Pokédex',
     description: 'Interactive Pokédex that uses PokéAPI so people can search important information for building teams.',
