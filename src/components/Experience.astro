@@ -1,33 +1,60 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = {
+  'en': [
+    {
+      date: 'October 2019 to February 2021',
+      title: 'Web Developer - Imaginanet',
+      company: 'Imaginanet',
+      description: 'Development of web-browser and mobile compatible games with Javascript and Playcanvas. Use of VSC like GitHub.',
+      link: 'https://www.imaginanet.com/juegos-html5.html'
+    },
+    {
+      date: 'April 2019 to June 2019',
+      title: 'Web Developer - Stampwallet',
+      company: 'Stampwallet',
+      description: 'Responsible of improving and maintaining the code of old projects to adapt to new technologies and software updates. Learn new tech and creating new projects.',
+      link: 'https://customerloyaltyapp.com/products/stampwallet-app/'
+    },
+    {
+      date: 'October 2018 to March 2019',
+      title: 'Web Developer - Biyectiva',
+      company: 'Biyectiva',
+      description: 'Programming web platform for an API used in a mobile application. Learning of Angular and Laravel to use along variated libraries for graphs and timelines.',
+      link: 'https://www.biyectiva.com/es/success-story/connectvty'
+    },
+  ],
+  'de': [
+  {
+      date: 'Oktober 2019 bis Februar 2021',
+      title: 'Web Developer - Imaginanet',
+      company: 'Imaginanet',
+      description: 'Ich habe Web und Mobile kompatibel Spiele mit Angular und Playcanvas entwickelt. Nutzung von Github.',
+      link: 'https://www.imaginanet.com/juegos-html5.html'
+    },
+    {
+      date: 'April 2019 bis Juni 2019',
+      title: 'Web Developer - Stampwallet',
+      company: 'Stampwallet',
+      description: 'Responsible of improving and maintaining the code of old projects to adapt to new technologies and software updates. Learn new tech and creating new projects.',
+      link: 'https://www.puntje.nl/'
+    },
+    {
+      date: 'Oktober 2018 bis März 2019',
+      title: 'Web Developer - Biyectiva',
+      company: 'Biyectiva',
+      description: 'Programming web platform for an API used in a mobile application. Learning of Angular and Laravel to use along variated libraries for graphs and timelines.',
+      link: 'https://www.biyectiva.com/es/success-story/connectvty'
+    },
+  ]
+}
 
-const EXPERIENCE = [
-  {
-    date: 'October 2019 to February 2021',
-    title: 'Web Developer - Imaginanet',
-    company: 'Imaginanet',
-    description: 'Development of web-browser and mobile compatible games with Javascript and Playcanvas. Use of VSC like GitHub.',
-    link: 'https://www.imaginanet.com/juegos-html5.html'
-  },
-  {
-    date: 'April 2019 to June 2019',
-    title: 'Web Developer - Stampwallet',
-    company: 'Stampwallet',
-    description: 'Responsible of improving and maintaining the code of old projects to adapt to new technologies and software updates. Learn new tech and creating new projects.',
-    link: 'https://www.puntje.nl/'
-  },
-  {
-    date: 'October 2018 to March 2019',
-    title: 'Web Developer - Biyectiva',
-    company: 'Biyectiva',
-    description: 'Programming web platform for an API used in a mobile application. Learning of Angular and Laravel to use along variated libraries for graphs and timelines.',
-    link: 'https://www.biyectiva.com/es/success-story/connectvty'
-  },
-]
+
+const currentLang = Astro.currentLocale
 ---
 <ol class="relative mt-16">
   {
-    EXPERIENCE.map(experience => (
+    EXPERIENCE[currentLang].map(experience => (
       <li class="">
         <ExperienceItem {...experience} />
       </li>

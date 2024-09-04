@@ -6,6 +6,25 @@ import Badge from '@/components/Badge.astro'
 import LinkedInIcon from '@/components/icons/LinkedIn.astro'
 import MailIcon from '@/components/icons/Mail.astro'
 import SocialPill from '@/components/SocialPill.astro'
+
+const translations = {
+  'en': {
+    'hireme': 'Available for hire',
+    'hi': 'Hey, I\'m Victor',
+    'exp1': '+3 years of experience.',
+    'exp2': 'Full-Stack Web Developer and Games Programmer',
+    'exp3': 'based in Ourense, Spain 🇪🇸. Specialised in creating unique applications.'
+  },
+  'de': {
+    'hireme': 'Verfügbar zu einstellen',
+    'hi': 'Hey, Ich bin Victor',
+    'exp1': '+3 Jahren von Erfahrung.',
+    'exp2': 'Full-Stack Web Entwickler und Games Programmierer',
+    'exp3': 'aus Ourense, Spain 🇪🇸. Spezialisiert auf die Herstellung einzigartiger Applikationen.'
+  }
+}
+
+let currentLocale = Astro.currentLocale || 'en'
 ---
 
 <div class="max-w-xl">
@@ -21,16 +40,16 @@ import SocialPill from '@/components/SocialPill.astro'
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-      <Badge>Available for hire</Badge>
+      <Badge>{translations[currentLocale]['hireme']}</Badge>
     </a>
   </div>
   <h1 class="text-4xl font-bol tracking-tight text-gray-800 sm:text-5xl dark:text-white">
-    Hey, I'm visama
+    {translations[currentLocale]['hi']}
   </h1>
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
-    +3 years of experience. <strong>Full-Stack Developer and Games Programmer</strong> based in Ourense, Spain 🇪🇸. Specialised in creating unique applications.
+    {translations[currentLocale]['exp1']} <strong>{translations[currentLocale]['exp2']}</strong> {translations[currentLocale]['exp3']}
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:visamalog@gmail.com">
