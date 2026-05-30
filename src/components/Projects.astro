@@ -13,6 +13,7 @@ import ElectronIcon from '@/components/icons/Electron.astro'
 import SvelteIcon from '@/components/icons/Svelte.astro'
 import ReactNativeIcon from '@/components/icons/React.astro'
 import AppwriteIcon from '@/components/icons/Appwrite.astro'
+import SupabaseIcon from '@/components/icons/Supabase.astro'
 
 const TAGS = {
   NEXT: {
@@ -54,6 +55,11 @@ const TAGS = {
     name: "Appwrite",
     class: "bg-white text-black",
     icon: AppwriteIcon
+  },
+  SUPABASE: {
+    name: "Supabase",
+    class: "bg-white text-black",
+    icon: SupabaseIcon
   }
 }
 
@@ -64,7 +70,7 @@ const PROJECTS = [
     link: 'https://rewards.visamalog.com/',
     github: 'https://github.com/Visama396/wakfurewards',
     image: "/projects/wakfurewards.webp",
-    tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND]
+    tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND, TAGS.SUPABASE]
   },
   {
     title: 'Pokédex',
