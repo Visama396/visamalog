@@ -2,7 +2,7 @@
 // Layout
 import Layout from '@/layouts/Layout.astro'
 
-// Componentes
+// Components
 import SectionContainer from '@/components/SectionContainer.astro'
 import Hero from '@/components/Hero.astro'
 import Experience from '@/components/Experience.astro'
@@ -15,29 +15,31 @@ import CodeIcon from '@/components/icons/Code.astro'
 import UserShareIcon from '@/components/icons/UserShare.astro'
 ---
 
-<Layout title="Porfolio de Víctor - Programador Web con 3 años de experiencia" description="Contráteme para crear sus aplicaciones web o móvil">
+<Layout
+	title="Portfolio de Víctor - Ingeniero de software y programador con 5 años de experiencia"
+	description="Contráteme para crear su aplicación web o móvil. Ingeniero de software y programador de videojuegos con base en Ourense, España."
+	lang="es"
+>
 	<main class="px-4">
 		<SectionContainer class="py-16 md:py-36">
-			<Hero>
-				</slot>
-			</Hero>
+			<Hero />
 		</SectionContainer>
 		<div class="space-y-24">
-			<SectionContainer id="experience">
+			<SectionContainer id="experience" class="reveal">
 				<h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
 					<WorkIcon class="size-8" />
 					Experiencia
 				</h2>
 				<Experience />
 			</SectionContainer>
-			<SectionContainer id="projects">
+			<SectionContainer id="projects" class="reveal">
 				<h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
 					<CodeIcon class="size-8" />
 					Proyectos
 				</h2>
 				<Projects />
 			</SectionContainer>
-			<SectionContainer id="about">
+			<SectionContainer id="about" class="reveal">
 				<h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
 					<UserShareIcon class="size-8" />
 					Sobre mí

@@ -53,105 +53,225 @@ const TAGS = {
   },
   APPWRITE: {
     name: "Appwrite",
-    class: "bg-white text-black",
+    class: "bg-white text-black border border-black/10",
     icon: AppwriteIcon
   },
   SUPABASE: {
     name: "Supabase",
-    class: "bg-white text-black",
+    class: "bg-white text-black border border-black/10",
     icon: SupabaseIcon
   }
 }
 
-const PROJECTS = [
+const DESCRIPTIONS = {
+  'wakfurewards': {
+    'en': 'Tool that tracks monthly competitive rewards in Wakfu based on dungeon completion.',
+    'es': 'Herramienta que registra las recompensas competitivas mensuales de Wakfu según las mazmorras completadas.',
+    'de': 'Ein Tool, das monatliche Wettkampf-Belohnungen in Wakfu basierend auf abgeschlossenen Dungeons verfolgt.',
+    'ja': 'ダンジョンのクリア状況に基づいて、Wakfu の月間コンペティション報酬を記録するツール。',
+    'ga': 'Ferramenta que rexistra as recompensas competitivas mensuais de Wakfu segundo as mazmorras completadas.'
+  },
+  'pokedex': {
+    'en': 'Interactive Pokédex that uses PokéAPI so people can search important information for building teams.',
+    'es': 'Pokédex interactivo que usa PokéAPI para buscar información importante de cara a crear equipos.',
+    'de': 'Interaktiver Pokédex, der die PokéAPI nutzt, um wichtige Informationen für die Team-Zusammenstellung zu suchen.',
+    'ja': 'PokéAPI を利用したインタラクティブな Pokédex。パーティ編成に役立つ情報を検索できる。',
+    'ga': 'Pokédex interactivo que usa a PokéAPI para buscar información importante á hora de crear equipos.'
+  },
+  'wakpedia': {
+    'en': 'Encyclopedia of items from the game Wakfu. The API is given by the developer "Ankama" in form of JSON files.',
+    'es': 'Enciclopedia de items del juego Wakfu. La API la proporciona el desarrollador "Ankama" en forma de archivos JSON.',
+    'de': 'Enzyklopädie der Items aus dem Spiel Wakfu. Die API wird vom Entwickler "Ankama" in Form von JSON-Dateien bereitgestellt.',
+    'ja': 'ゲーム「Wakfu」のアイテム図鑑。開発元「Ankama」が提供する JSON ファイル形式の API を使用。',
+    'ga': 'Enciclopedia de items do xogo Wakfu. A API proporciónaa o desenvolvedor "Ankama" en forma de arquivos JSON.'
+  },
+  'viplay': {
+    'en': 'Music player with my favourite playlists. A Spotify clone made with Astro using React and Svelte components. Zustand for the store and tried to use Typescript as much as I could.',
+    'es': 'Reproductor de música con mis listas favoritas. Un clon de Spotify hecho con Astro usando componentes de React y Svelte. Zustand para el estado e intentando usar TypeScript al máximo.',
+    'de': 'Musikplayer mit meinen Lieblings-Playlists. Ein Spotify-Klon mit Astro und React- und Svelte-Komponenten. Zustand für den Store und möglichst viel TypeScript.',
+    'ja': 'お気に入りのプレイリストを楽しめるミュージックプレイヤー。React と Svelte コンポーネントを使った Astro 製 Spotify クローン。状態管理は Zustand、できる限り TypeScript を使用。',
+    'ga': 'Reprodutor de música coas miñas listas favoritas. Un clon de Spotify feito con Astro usando compoñentes de React e Svelte. Zustand para o estado e o máximo posible de TypeScript.'
+  },
+  'visamanote': {
+    'en': 'Notes desktop application made with Electron and React.',
+    'es': 'Aplicación de escritorio de notas hecha con Electron y React.',
+    'de': 'Notiz-Desktop-App mit Electron und React.',
+    'ja': 'Electron と React で作られたデスクトップ用メモアプリ。',
+    'ga': 'Aplicación de escritorio de notas feita con Electron e React.'
+  },
+  'aora': {
+    'en': 'Mobile application where users can upload their own content and watch content from others.',
+    'es': 'Aplicación móvil donde los usuarios pueden subir su propio contenido y ver el de los demás.',
+    'de': 'Mobile App, in der Nutzer eigene Inhalte hochladen und die der anderen ansehen können.',
+    'ja': 'ユーザーが自分のコンテンツをアップロードし、他の人のコンテンツを視聴できるモバイルアプリ。',
+    'ga': 'Aplicación móbil onde as usuarias poden subir o seu propio contido e ver o dos demais.'
+  }
+}
+
+const LABELS = {
+  'code': {
+    'en': 'Code', 'es': 'Código', 'de': 'Code', 'ja': 'コード', 'ga': 'Código'
+  },
+  'preview': {
+    'en': 'Preview', 'es': 'Vista previa', 'de': 'Vorschau', 'ja': 'プレビュー', 'ga': 'Ver'
+  },
+  'screenshot': {
+    'en': 'Screenshot of {title}',
+    'es': 'Captura del proyecto {title}',
+    'de': 'Screenshot von {title}',
+    'ja': '{title} のスクリーンショット',
+    'ga': 'Captura do proxecto {title}'
+  }
+}
+
+const currentLocale = (Astro.currentLocale ?? 'en') as keyof typeof LABELS.code
+const t = {
+  code: LABELS.code[currentLocale],
+  preview: LABELS.preview[currentLocale],
+  screenshot: (title: string) => LABELS.screenshot[currentLocale].replace('{title}', title)
+}
+
+type Project = {
+  id: keyof typeof DESCRIPTIONS
+  title: string
+  link?: string
+  github?: string
+  image: string
+  featured?: boolean
+  tags: (typeof TAGS)[keyof typeof TAGS][]
+}
+
+const PROJECTS: Project[] = [
   {
+    id: 'wakfurewards',
     title: 'Wakfu Rewards',
-    description: 'Tool that tracks monthly competitive rewards in Wakfu based on dungeon completion.',
     link: 'https://rewards.visamalog.com/',
     github: 'https://github.com/Visama396/wakfurewards',
     image: "/projects/wakfurewards.webp",
+    featured: true,
     tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND, TAGS.SUPABASE]
   },
   {
+    id: 'pokedex',
     title: 'Pokédex',
-    description: 'Interactive Pokédex that uses PokéAPI so people can search important information for building teams.',
     link: 'https://pokedex.visamalog.com/',
     github: 'https://github.com/Visama396/PokedexWeb',
     image: "/projects/pokedex.webp",
     tags: [TAGS.ASTRO, TAGS.TAILWIND]
   },
   {
+    id: 'wakpedia',
     title: 'Wakpedia',
-    description: 'Encyclopedia of items from the game Wakfu. The API is given by the developer "Ankama" in form of JSON files.',
     link: 'https://wakpedia.visamalog.com/',
     github: 'https://github.com/Visama396/wakfupedia',
     image: "/projects/wakpedia.webp",
     tags: [TAGS.ASTRO, TAGS.TAILWIND]
   },
   {
+    id: 'viplay',
     title: 'Viplay',
-    description: 'Music player with my favourite playlists. It\'s a clone of Spotify made with Astro using React and Svelte components. Zustand for the store and tried to use Typescript as much as I could.',
     link: 'https://viplay.visamalog.com/',
     github: 'https://github.com/Visama396/viplay',
     image: "/projects/viplay.webp",
     tags: [TAGS.ASTRO, TAGS.REACT, TAGS.SVELTE, TAGS.TAILWIND]
   },
   {
+    id: 'visamanote',
     title: 'VisamaNote',
-    description: 'Notes desktop application made with Electron and React.',
     github: 'https://github.com/Visama396/VisamaNote',
     image: "/projects/VisamaNote.webp",
     tags: [TAGS.ELECTRON, TAGS.REACT, TAGS.TAILWIND]
   },
   {
+    id: 'aora',
     title: 'Aora',
-    description: 'Mobile application that serves as a place for users to upload their own content and for others to watch.',
-    github: 'https://github.com/Visama396/PokedexWeb',
+    github: 'https://github.com/Visama396/aora',
     image: '/projects/aora.webp',
     tags: [TAGS.REACTNATIVE, TAGS.APPWRITE, TAGS.TAILWIND]
   },
 ]
 ---
-<div class="flex flex-col gap-y-16">
+<div class="grid gap-4 md:grid-cols-3">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img src={image} loading="lazy" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" alt={`Captura del proyecto ${title}`}>
-          </div>
-        </div>
+    PROJECTS.map(({ id, image, title, tags, link, github, featured }) => (
+      <article
+        class={[
+          "group relative overflow-hidden rounded-2xl ring-1 ring-black/5 dark:ring-white/10 shadow-lg shadow-black/5 dark:shadow-none transition-shadow duration-300 hover:shadow-2xl",
+          "aspect-[16/10] md:aspect-auto",
+          featured ? "md:col-span-2 md:row-span-2 md:h-[33rem]" : "md:h-64"
+        ].join(" ")}
+      >
+        <img
+          src={image}
+          loading="lazy"
+          decoding="async"
+          class="absolute inset-0 object-cover object-top w-full h-full transition duration-500 ease-out group-hover:scale-105"
+          alt={t.screenshot(title)}
+        >
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30"></div>
 
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">{title}</h3>
-          <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
-              {
-                tags.map(tag => (
-                  <li>
-                    <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
-                      <tag.icon class="size-4" />
-                      {tag.name}
-                    </span>
-                  </li>
-                ))
-              }
-            </ul>
-            <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-            <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {github && (
+        <div class="relative flex flex-col justify-end gap-3 p-5 md:p-6 text-white">
+          <div class={featured ? "flex flex-wrap gap-1.5" : "order-2 flex flex-wrap gap-1.5"}>
+            {
+              tags.map(tag => (
+                <span class={`flex items-center gap-x-1.5 rounded-full text-[0.7rem] font-medium ring-1 ring-white/40 backdrop-blur-sm ${featured ? "py-1 px-2.5" : "py-0.5 px-2"} ${tag.class}`}>
+                  <tag.icon class="size-3.5" />
+                  {tag.name}
+                </span>
+              ))
+            }
+          </div>
+
+          <div class="flex flex-1 flex-col justify-end">
+            <h3 class={featured ? "text-2xl font-bold tracking-tight drop-shadow-sm" : "text-lg font-semibold leading-snug drop-shadow-sm"}>{title}</h3>
+<p
+                class={
+                  featured
+                    ? "mt-2 text-sm font-medium text-white/95 text-pretty max-w-[46ch] drop-shadow-sm"
+                    : "mt-1 text-sm font-medium text-white/95 line-clamp-2 drop-shadow-sm"
+                }
+              >
+              {DESCRIPTIONS[id][currentLocale]}
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            {github && (
+              featured ? (
                 <LinkButton href={github}>
-                  <GitHub class="size-6" />
-                  Code
+                  <GitHub class="size-5" />
+                  {t.code}
                 </LinkButton>
-              )}
-              {link && (
+              ) : (
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={t.code}
+                  class="flex size-9 items-center justify-center rounded-full bg-white/15 backdrop-blur-md ring-1 ring-white/25 transition hover:bg-white/25 hover:ring-white/40"
+                >
+                  <GitHub class="size-4" />
+                </a>
+              )
+            )}
+            {link && (
+              featured ? (
                 <LinkButton href={link}>
                   <LinkIcon class="size-4" />
-                  Preview
+                  {t.preview}
                 </LinkButton>
-              )}
-            </footer>
+              ) : (
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={t.preview}
+                  class="flex size-9 items-center justify-center rounded-full bg-white/15 backdrop-blur-md ring-1 ring-white/25 transition hover:bg-white/25 hover:ring-white/40"
+                >
+                  <LinkIcon class="size-4" />
+                </a>
+              )
+            )}
           </div>
         </div>
       </article>

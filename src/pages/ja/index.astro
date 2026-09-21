@@ -1,0 +1,51 @@
+---
+// Layout
+import Layout from '@/layouts/Layout.astro'
+
+// Components
+import SectionContainer from '@/components/SectionContainer.astro'
+import Hero from '@/components/Hero.astro'
+import Experience from '@/components/Experience.astro'
+import Projects from '@/components/Projects.astro'
+import About from '@/components/About.astro'
+
+// Icons
+import WorkIcon from '@/components/icons/Work.astro'
+import CodeIcon from '@/components/icons/Code.astro'
+import UserShareIcon from '@/components/icons/UserShare.astro'
+---
+
+<Layout
+	title="Víctor のポートフォリオ - 5年以上の経験を持つソフトウェアエンジニア"
+	description="Web やモバイルアプリケーションの開発はお任せください。スペイン・オウレンセ在住のソフトウェアエンジニア・ゲームプログラマーです。"
+	lang="ja"
+>
+	<main class="px-4">
+		<SectionContainer class="py-16 md:py-36">
+			<Hero />
+		</SectionContainer>
+		<div class="space-y-24">
+			<SectionContainer id="experience" class="reveal">
+				<h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+					<WorkIcon class="size-8" />
+					経験
+				</h2>
+				<Experience />
+			</SectionContainer>
+			<SectionContainer id="projects" class="reveal">
+				<h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+					<CodeIcon class="size-8" />
+					プロジェクト
+				</h2>
+				<Projects />
+			</SectionContainer>
+			<SectionContainer id="about" class="reveal">
+				<h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+					<UserShareIcon class="size-8" />
+					私について
+				</h2>
+				<About />
+			</SectionContainer>
+		</div>
+	</main>
+</Layout>

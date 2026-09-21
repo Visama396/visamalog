@@ -1,9 +1,11 @@
 import { defineConfig } from 'astro/config';
 
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://visamalog.com",
   i18n: {
     defaultLocale: "en",
     locales: ["en", "es", "de", "ja", "ga"],
@@ -11,5 +13,11 @@ export default defineConfig({
       prefixDefaultLocale: false
     }
   },
-  integrations: [tailwind()]
+  prefetch: true,
+  vite: {
+    plugins: [tailwindcss()]
+  },
+  integrations: [sitemap({
+    filter: (page) => !page.endsWith('/components/')
+  })]
 });

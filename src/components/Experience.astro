@@ -1,133 +1,131 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
+
 const EXPERIENCE = {
   'en': [
     {
       date: 'October 2019 to February 2021',
       title: 'Web Developer - Imaginanet',
       company: 'Imaginanet',
-      description: 'Development of web-browser and mobile compatible games with Javascript and Playcanvas. Use of VSC like GitHub.',
+      description: 'Development of web-browser and mobile compatible games with JavaScript and PlayCanvas. Use of version control systems like GitHub.',
       link: 'https://www.imaginanet.com/juegos-html5.html'
     },
     {
       date: 'April 2019 to June 2019',
       title: 'Web Developer - Stampwallet',
       company: 'Stampwallet',
-      description: 'Responsible of improving and maintaining the code of old projects to adapt to new technologies and software updates. Learn new tech and creating new projects.',
+      description: 'Responsible for improving and maintaining the code of old projects to adapt them to new technologies and software updates. Learned new technologies and created new projects.',
       link: 'https://customerloyaltyapp.com/products/stampwallet-app/'
     },
     {
       date: 'October 2018 to March 2019',
       title: 'Web Developer - Biyectiva',
       company: 'Biyectiva',
-      description: 'Programming web platform for an API used in a mobile application. Learning of Angular and Laravel to use along variated libraries for graphs and timelines.',
+      description: 'Development of a web platform for an API used in a mobile application. Learned Angular and Laravel together with various libraries for graphs and timelines.',
       link: 'https://www.biyectiva.com/es/success-story/connectvty'
-    },
+    }
   ],
   'de': [
-  {
+    {
       date: 'Oktober 2019 bis Februar 2021',
       title: 'Web Developer - Imaginanet',
       company: 'Imaginanet',
-      description: 'Ich habe Web und Mobile kompatibel Spiele mit Angular und Playcanvas entwickelt. Nutzung von Github.',
+      description: 'Entwicklung von mit Browser und Mobilgerät kompatiblen Spielen mit JavaScript und PlayCanvas. Nutzung von Versionskontrollsystemen wie GitHub.',
       link: 'https://www.imaginanet.com/juegos-html5.html'
     },
     {
       date: 'April 2019 bis Juni 2019',
       title: 'Web Developer - Stampwallet',
       company: 'Stampwallet',
-      description: 'Responsible of improving and maintaining the code of old projects to adapt to new technologies and software updates. Learn new tech and creating new projects.',
-      link: 'https://www.puntje.nl/'
+      description: 'Verantwortlich für die Verbesserung und Wartung des Codes alter Projekte, um sie an neue Technologien und Software-Updates anzupassen. Neue Technologien gelernt und neue Projekte erstellt.',
+      link: 'https://customerloyaltyapp.com/products/stampwallet-app/'
     },
     {
       date: 'Oktober 2018 bis März 2019',
       title: 'Web Developer - Biyectiva',
       company: 'Biyectiva',
-      description: 'Programming web platform for an API used in a mobile application. Learning of Angular and Laravel to use along variated libraries for graphs and timelines.',
+      description: 'Programmierung einer Web-Plattform für eine API, die in einer mobilen Anwendung verwendet wird. Erlernen von Angular und Laravel zusammen mit verschiedenen Bibliotheken für Grafiken und Zeitverläufe.',
       link: 'https://www.biyectiva.com/es/success-story/connectvty'
-    },
+    }
   ],
   'es': [
-  {
-      date: 'Oktober 2019 bis Februar 2021',
-      title: 'Web Developer - Imaginanet',
+    {
+      date: 'Octubre de 2019 a febrero de 2021',
+      title: 'Desarrollador Web - Imaginanet',
       company: 'Imaginanet',
-      description: 'Ich habe Web und Mobile kompatibel Spiele mit Angular und Playcanvas entwickelt. Nutzung von Github.',
+      description: 'Desarrollo de juegos compatibles con navegador web y móvil con JavaScript y PlayCanvas. Uso de sistemas de control de versiones como GitHub.',
       link: 'https://www.imaginanet.com/juegos-html5.html'
     },
     {
-      date: 'April 2019 bis Juni 2019',
-      title: 'Web Developer - Stampwallet',
+      date: 'Abril de 2019 a junio de 2019',
+      title: 'Desarrollador Web - Stampwallet',
       company: 'Stampwallet',
-      description: 'Responsible of improving and maintaining the code of old projects to adapt to new technologies and software updates. Learn new tech and creating new projects.',
-      link: 'https://www.puntje.nl/'
+      description: 'Encargado de mejorar y mantener el código de proyectos antiguos para adaptarlos a nuevas tecnologías y actualizaciones de software. Aprendí nuevas tecnologías y creé nuevos proyectos.',
+      link: 'https://customerloyaltyapp.com/products/stampwallet-app/'
     },
     {
-      date: 'Oktober 2018 bis März 2019',
-      title: 'Web Developer - Biyectiva',
+      date: 'Octubre de 2018 a marzo de 2019',
+      title: 'Desarrollador Web - Biyectiva',
       company: 'Biyectiva',
-      description: 'Programming web platform for an API used in a mobile application. Learning of Angular and Laravel to use along variated libraries for graphs and timelines.',
+      description: 'Programación de una plataforma web para una API usada en una aplicación móvil. Aprendizaje de Angular y Laravel junto con varias librerías de gráficas y líneas de tiempo.',
       link: 'https://www.biyectiva.com/es/success-story/connectvty'
-    },
+    }
   ],
-  'jp': [
-  {
-      date: 'Oktober 2019 bis Februar 2021',
-      title: 'Web Developer - Imaginanet',
+  'ja': [
+    {
+      date: '2019年10月 〜 2021年2月',
+      title: 'Web開発者・Imaginanet',
       company: 'Imaginanet',
-      description: 'Ich habe Web und Mobile kompatibel Spiele mit Angular und Playcanvas entwickelt. Nutzung von Github.',
+      description: 'JavaScript と PlayCanvas を用いて、ブラウザとモバイルに対応したゲームを開発。GitHub などのバージョン管理システムを使用。',
       link: 'https://www.imaginanet.com/juegos-html5.html'
     },
     {
-      date: 'April 2019 bis Juni 2019',
-      title: 'Web Developer - Stampwallet',
+      date: '2019年4月 〜 2019年6月',
+      title: 'Web開発者・Stampwallet',
       company: 'Stampwallet',
-      description: 'Responsible of improving and maintaining the code of old projects to adapt to new technologies and software updates. Learn new tech and creating new projects.',
-      link: 'https://www.puntje.nl/'
+      description: '既存プロジェクトを新しいテクノロジーやソフトウェアのアップデートに適応させるため、コードの改善と保守を担当。新しい技術を学び、新規プロジェクトも創出。',
+      link: 'https://customerloyaltyapp.com/products/stampwallet-app/'
     },
     {
-      date: 'Oktober 2018 bis März 2019',
-      title: 'Web Developer - Biyectiva',
+      date: '2018年10月 〜 2019年3月',
+      title: 'Web開発者・Biyectiva',
       company: 'Biyectiva',
-      description: 'Programming web platform for an API used in a mobile application. Learning of Angular and Laravel to use along variated libraries for graphs and timelines.',
+      description: 'モバイルアプリで使用される API のための Web プラットフォームを開発。グラフやタイムライン用のライブラリに加えて、Angular と Laravel を学習。',
       link: 'https://www.biyectiva.com/es/success-story/connectvty'
-    },
+    }
   ],
   'ga': [
-  {
-      date: 'Oktober 2019 bis Februar 2021',
-      title: 'Web Developer - Imaginanet',
+    {
+      date: 'Outubro de 2019 a febreiro de 2021',
+      title: 'Desenvolvedor web - Imaginanet',
       company: 'Imaginanet',
-      description: 'Ich habe Web und Mobile kompatibel Spiele mit Angular und Playcanvas entwickelt. Nutzung von Github.',
+      description: 'Desenvolvemento de videoxogos compatíbeis con navegadores web e móbiles con JavaScript e PlayCanvas. Uso de sistemas de control de versións como GitHub.',
       link: 'https://www.imaginanet.com/juegos-html5.html'
     },
     {
-      date: 'April 2019 bis Juni 2019',
-      title: 'Web Developer - Stampwallet',
+      date: 'Abril de 2019 a xuño de 2019',
+      title: 'Desenvolvedor web - Stampwallet',
       company: 'Stampwallet',
-      description: 'Responsible of improving and maintaining the code of old projects to adapt to new technologies and software updates. Learn new tech and creating new projects.',
-      link: 'https://www.puntje.nl/'
+      description: 'Responsable de mellorar e manter o código de proxectos antigos para adaptalos a novas tecnoloxías e actualizacións de software. Aprendeu novas tecnoloxías e creou novos proxectos.',
+      link: 'https://customerloyaltyapp.com/products/stampwallet-app/'
     },
     {
-      date: 'Oktober 2018 bis März 2019',
-      title: 'Web Developer - Biyectiva',
+      date: 'Outubro de 2018 a marzo de 2019',
+      title: 'Desenvolvedor web - Biyectiva',
       company: 'Biyectiva',
-      description: 'Programming web platform for an API used in a mobile application. Learning of Angular and Laravel to use along variated libraries for graphs and timelines.',
+      description: 'Programación dunha plataforma web para unha API usada nunha aplicación móbil. Aprendizaxe de Angular e Laravel xunto con varias librarías para gráficas e liñas de tempo.',
       link: 'https://www.biyectiva.com/es/success-story/connectvty'
-    },
+    }
   ]
 }
 
-
-const currentLang = Astro.currentLocale
+const currentLocale = (Astro.currentLocale ?? 'en') as keyof typeof EXPERIENCE
 ---
+
 <ol class="relative mt-16">
   {
-    EXPERIENCE[currentLang].map(experience => (
-      <li class="">
-        <ExperienceItem {...experience} />
-      </li>
+    EXPERIENCE[currentLocale].map(experience => (
+      <ExperienceItem {...experience} />
     ))
   }
 </ol>
-

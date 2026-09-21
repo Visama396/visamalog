@@ -1,23 +1,30 @@
 ---
 import LinkInline from '@/components/LinkInline.astro'
+
 export interface Props {
   title: string
   description: string
   company: string
   link?: string
-  date: string  
+  date: string
 }
 
 const { title, company, description, link, date } = Astro.props
+
+const knowMore = {
+  'en': 'Know more',
+  'es': 'Saber más',
+  'de': 'Mehr erfahren',
+  'ja': 'もっと見る',
+  'ga': 'Saber máis'
+}[Astro.currentLocale ?? 'en']
 ---
 
-<div
-  class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
->
+<div class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10">
   <div class="relative pb-12 md:col-span-2">
     <div class="sticky top-0">
       <span class="text-yellow-400 -left-[42px] absolute rounded-full text-5xl">&bull;</span>
-      <h3 class="text-xl font-bol text-yellow-400">{title}</h3>
+      <h3 class="text-xl font-semibold text-yellow-400">{title}</h3>
       <h4 class="font-semibold text-xl text-gray-600 dark:text-white">{company}</h4>
       <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">{date}</time>
     </div>
@@ -27,7 +34,7 @@ const { title, company, description, link, date } = Astro.props
     {
       link && (
         <LinkInline href={link}>
-          Know more{" "}
+          {knowMore}{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-5 icon icon-tabler icon-tabler-chevron-right"
@@ -40,10 +47,8 @@ const { title, company, description, link, date } = Astro.props
             stroke-linecap="round"
             stroke-linejoin="round"
           >
-            <>
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M9 6l6 6l-6 6" />
-            </>
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M9 6l6 6l-6 6" />
           </svg>
         </LinkInline>
       )

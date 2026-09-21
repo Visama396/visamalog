@@ -1,19 +1,29 @@
 ---
 const currentYear = new Date().getFullYear()
+
+const translations = {
+  'en': { about: 'About', contact: 'Contact', rights: 'Almost All Rights Reserved.' },
+  'es': { about: 'Sobre mí', contact: 'Contacto', rights: 'Casi todos los derechos reservados.' },
+  'de': { about: 'Über mich', contact: 'Kontakt', rights: 'Fast alle Rechte vorbehalten.' },
+  'ja': { about: '私について', contact: 'お問い合わせ', rights: 'ほぼすべての権利を留保します。' },
+  'ga': { about: 'Sobre min', contact: 'Contacto', rights: 'Case todos os dereitos reservados.' }
+}
+
+const t = translations[(Astro.currentLocale ?? 'en') as keyof typeof translations]
 ---
 
 <footer class="rounded-lg shadow m-4 bg-black/5 dark:bg-black/20 backdrop-blur-lg w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center">
   <div class="w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between">
     <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90">
-      © {currentYear} 
-      <a href="https://visamalog.com/" class="hover:underline">Visamalog</a>. Almost All Rights Reserved.
+      © {currentYear}{" "}
+      <a href="https://visamalog.com/" class="hover:underline">Visamalog</a>. {t.rights}
     </span>
     <ul class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0">
       <li>
-          <a href="/#about" class="hover:underline me-4 md:me-6">About</a>
+          <a href="/#about" class="hover:underline me-4 md:me-6">{t.about}</a>
       </li>
       <li>
-          <a href="mailto:visamalog@gmail.com" class="hover:underline">Contact</a>
+          <a href="mailto:visamalog@gmail.com" class="hover:underline">{t.contact}</a>
       </li>
     </ul>
   </div>

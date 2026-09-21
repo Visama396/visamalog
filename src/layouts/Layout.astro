@@ -1,56 +1,59 @@
 ---
 import '@fontsource-variable/onest'
+import '@/styles/global.css'
 
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 
-import { ViewTransitions } from 'astro:transitions'
+import { ClientRouter } from 'astro:transitions'
 
 interface Props {
 	title: string
 	description: string
+	lang?: string
 }
 
-const { title, description } = Astro.props
+const { title, description, lang = 'en' } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={Astro.url.href} />
+		<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="#030712" media="(prefers-color-scheme: dark)" />
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<link rel="manifest" href="/site.webmanifest">
 		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 		<meta name="msapplication-TileColor" content="#da532c">
-		<meta name="theme-color" content="#ffffff">
-		<ViewTransitions />
+		<ClientRouter />
 	</head>
 	<body class="relative text-black dark:text-white">
-		<div 
+		<div
 			class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
       bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
-      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
-		</div>
+      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
 		<Header />
 		<slot />
 		<Footer />
 		<style is:global>
-			:root {
-				color-scheme: light dark;
-			}
-			
 			html {
 				font-family: "Onest Variable", system-ui, sans-serif;
 				scroll-behavior: smooth;
+				accent-color: #eab308;
 			}
-		
+
 			body {
 				color: rgba(17,17,17,0.9);
 				display: flex;
@@ -58,8 +61,8 @@ const { title, description } = Astro.props
 				min-height: 100vh;
 				overscroll-behavior: none;
 			}
-		
-			@media (prefers-reduce-motion: reduce) {
+
+			@media (prefers-reduced-motion: reduce) {
 				html {
 					scroll-behavior: auto;
 				}
@@ -71,48 +74,19 @@ const { title, description } = Astro.props
 				}
 			}
 
-			#header-nav {
-				animation: blur linear both 0.5s;
-				animation-timeline: scroll();
-				animation-range: 0 500px;
-			}
-
-			@keyframes blur {
-				to {
-					backdrop-filter: blur(20px);
-					border-width: 1px;
-					border-color: rgba(0,0,0);
-					padding: 0.25rem 0.75rem;
-					display: flex;
-					flex-direction: row;
-					align-items: center;
-					background-color: rgb(229,229,229);
-					border-radius: 9999px;
+			@media (prefers-reduced-motion: no-preference) {
+				.reveal {
+					opacity: 0;
+					translate: 0 24px;
+					animation: reveal linear both;
+					animation-timeline: view();
+					animation-range: entry 0% entry 40%;
 				}
-			}
 
-			@media (prefers-color-scheme: dark) {
-				@keyframes blur {
-					from {
-						border: 0px;
-					}
+				@keyframes reveal {
 					to {
-						box-shadow:
-							0px 5px 50px -5px rgba(0,0,0,0.1),
-							0px 0px 0 1px rgba(0,0,0,0.3);
-						background: rgba(0,0,0,0.3);
-						backdrop-filter: blur(20px);
-						border-width: 1px;
-						border-color: rgba(0, 0, 0);
-            padding-left: 0.75rem;
-            padding-right: 0.75rem;
-            padding-top: 0.25rem;
-            padding-bottom: 0.25rem;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 9999px;
+						opacity: 1;
+						translate: 0 0;
 					}
 				}
 			}

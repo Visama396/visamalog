@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@source inline("aspect-[16/10]");
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Onest Variable", system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}

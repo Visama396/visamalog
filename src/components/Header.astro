@@ -2,43 +2,45 @@
 import ThemeToggle from '@/components/ThemeToggle.astro'
 import LanguageToggle from '@/components/LanguageToggle.astro'
 
-const navItems = [
-  {
-    title: "Experience",
-    label: "experience",
-    url: "/#experience"
-  },
-  {
-    title: "Projects",
-    label: "projects",
-    url: "/#projects"
-  },
-  {
-    title: "About me",
-    label: "about me",
-    url: "/#about"
-  },
-  {
-    title: "Resume",
-    label: "cv",
-    url: "https://cv.visamalog.com"
-  }
-]
+const translations = {
+  'en': { experience: 'Experience', projects: 'Projects', about: 'About me', resume: 'Resume' },
+  'es': { experience: 'Experiencia', projects: 'Proyectos', about: 'Sobre mí', resume: 'Currículum' },
+  'de': { experience: 'Erfahrung', projects: 'Projekte', about: 'Über mich', resume: 'Lebenslauf' },
+  'ja': { experience: '経験', projects: 'プロジェクト', about: '私について', resume: '履歴書' },
+  'ga': { experience: 'Experiencia', projects: 'Proxectos', about: 'Sobre min', resume: 'Currículo' }
+}
+
+const currentLocale = (Astro.currentLocale ?? 'en') as keyof typeof translations
+const t = translations[currentLocale]
+
+const sections = [
+  { id: 'experience', url: '/#experience' },
+  { id: 'projects', url: '/#projects' },
+  { id: 'about', url: '/#about' }
+] as const
 ---
 
 <header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
   <nav class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center">
     {
-      navItems.map(link => (
+      sections.map(link => (
         <a
           class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
-          aria-label={link.label}
+          aria-label={link.id}
           href={link.url}
         >
-          {link.title}
+          {t[link.id]}
         </a>
       ))
     }
+    <a
+      class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
+      href="https://cv.visamalog.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {t.resume}
+    </a>
     <ThemeToggle />
     <LanguageToggle />
   </nav>
@@ -46,8 +48,8 @@ const navItems = [
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const sections = document.querySelectorAll("section")
-    const navItems = document.querySelectorAll("header nav a")
+    const sections = document.querySelectorAll("section[data-section]")
+    const navItems = document.querySelectorAll("header nav a[aria-label]")
 
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {
@@ -73,7 +75,6 @@ const navItems = [
       observer.observe(section)
     })
 
-    // Cleanup function
     document.onvisibilitychange = () => {
       if (document.visibilityState === "hidden") {
         observer.disconnect()
@@ -95,7 +96,18 @@ const navItems = [
 
   @keyframes nav-shadown {
     to {
-      @apply shadow-lg ring-1 backdrop-blur bg-gray-300/60 dark:bg-gray-800/60 ring-white/10;
+      background-color: rgb(209 213 219 / 0.7);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0 0 1px rgb(255 255 255 / 0.1), 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @keyframes nav-shadown {
+      to {
+        background-color: rgb(17 24 39 / 0.7);
+        box-shadow: 0 0 0 1px rgb(255 255 255 / 0.05), 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+      }
     }
   }
 </style>

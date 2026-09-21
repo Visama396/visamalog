@@ -1,18 +1,44 @@
 ---
 const personalImageAlt = "Víctor Sánchez"
+
+const paragraphs = {
+  'en': [
+    'My name is Víctor Sánchez Martínez but my friends call me visama. I started programming at 14. <strong>Since then I never stopped learning about technology.</strong>',
+    'I have worked with start-ups like <strong>Biyectiva and their project "ConnecTVty"; Stampwallet, and Puntje</strong>. I later worked at Imaginanet developing new projects and taking more responsibilities which made me improve greatly as a developer.',
+    'I love learning languages and travelling; reading books like The Lord of the Rings and Harry Potter; recently started playing the guitar.'
+  ],
+  'es': [
+    'Mi nombre es Víctor Sánchez Martínez pero mis amigos me llaman visama. Empecé a programar a los 14 años. <strong>Desde entonces no he dejado de aprender sobre tecnología.</strong>',
+    'He trabajado con startups como <strong>Biyectiva y su proyecto "ConnecTVty"; Stampwallet, y Puntje</strong>. Después trabajé en Imaginanet desarrollando nuevos proyectos y asumiendo más responsabilidades, lo que me hizo mejorar mucho como desarrollador.',
+    'Me encanta aprender idiomas y viajar; leer libros como El Señor de los Anillos y Harry Potter; recientemente empecé a tocar la guitarra.'
+  ],
+  'de': [
+    'Mein Name ist Víctor Sánchez Martínez, aber meine Freunde nennen mich visama. Mit 14 habe ich angefangen zu programmieren. <strong>Seitdem habe ich nie aufgehört, mich über Technologie weiterzubilden.</strong>',
+    'Ich habe mit Start-ups wie <strong>Biyectiva und ihrem Projekt "ConnecTVty"; Stampwallet und Puntje</strong> gearbeitet. Später arbeitete ich bei Imaginanet, entwickelte neue Projekte und übernahm mehr Verantwortung, was mich als Entwickler sehr verbessert hat.',
+    'Ich liebe es, Sprachen zu lernen und zu reisen; Bücher wie Der Herr der Ringe und Harry Potter zu lesen; und habe vor Kurzem angefangen, Gitarre zu spielen.'
+  ],
+  'ja': [
+    '私の名前はビクター・サンチェス・マルティネスですが、友達からは「visama」と呼ばれています。14歳でプログラミングを始めました。<strong>それ以来、テクノロジーの学習をやめたことはありません。</strong>',
+    '<strong>Biyectiva とそのプロジェクト「ConnecTVty」、Stampwallet、Puntje</strong> などのスタートアップで働きました。その後 Imaginanet で新規プロジェクトの開発やより多くの責任を任され、開発者として大きく成長できました。',
+    '言語の習得と旅行が大好きです。『指輪物語』や『ハリー・ポッター』のような本を読むのも好きで、最近ギターも始めました。'
+  ],
+  'ga': [
+    'Chámome Víctor Sánchez Martínez pero os meus amigos chámanme visama. Comecei a programar aos 14 anos. <strong>Desde entón nunca deixei de aprender sobre tecnoloxía.</strong>',
+    'Traballei con startups como <strong>Biyectiva e o seu proxecto "ConnecTVty"; Stampwallet, e Puntje</strong>. Despois traballei en Imaginanet desenvolvendo novos proxectos e asumindo máis responsabilidades, o que me fixo mellorar moito como desenvolvedor.',
+    'Encántame aprender idiomas e viaxar; ler libros como O Señor dos Aneis e Harry Potter; recentemente comecei a tocar a guitarra.'
+  ]
+}
+
+const currentLocale = (Astro.currentLocale ?? 'en') as keyof typeof paragraphs
 ---
 
 <article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
   <div class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1">
-    <p>
-      My name is Víctor Sánchez Martínez but my friends call me visama. I started programming at 14. <strong>Since then I never stopped learning about technology.</strong>
-    </p>
-    <p>
-      I have worked with start-ups like <strong>Biyectiva and their proyect "ConnecTVty"; Stampwallet, and Puntje</strong>. I later worked at Imaginanet developing new proyects and taking more responsabilities which made me improve greatly as developer.
-    </p>
-    <p>
-      I love learning languages and travelling; reading books like The Lord of the Rings and Harry Potter; recently started playing the guitar.
-    </p>
+    {
+      paragraphs[currentLocale].map(p => (
+        <p set:html={p}></p>
+      ))
+    }
   </div>
 
   <img width="200" height="200" src="/me2.jpg" alt={personalImageAlt} class="order-1 object-cover w-64 h-full p-1 bg-white md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl dark:bg-yellow-500/5 ring-1 ring-white/20" style="object-position: 50% 50%">
