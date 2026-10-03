@@ -79,7 +79,7 @@ const t = translations[currentLocale]
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
-    {t.exp1} <strong>{t.exp2}</strong> {t.exp3}
+    {t.exp1 ? `${t.exp1} ` : ''}<strong>{t.exp2}</strong> {t.exp3}
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:visamalog@gmail.com">

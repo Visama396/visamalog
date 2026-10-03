@@ -13,6 +13,16 @@ const translations = {
 const currentLocale = (Astro.currentLocale ?? 'en') as keyof typeof translations
 const t = translations[currentLocale]
 
+const cvLinks: Record<string, string> = {
+  en: 'https://cv.visamalog.com',
+  es: 'https://cv.visamalog.com/es',
+  de: 'https://cv.visamalog.com/de',
+  ja: 'https://cv.visamalog.com/ja',
+  ga: 'https://cv.visamalog.com/ga',
+}
+
+const cvUrl = cvLinks[currentLocale] ?? cvLinks.en
+
 const sections = [
   { id: 'experience', url: '/#experience' },
   { id: 'projects', url: '/#projects' },
@@ -35,7 +45,7 @@ const sections = [
     }
     <a
       class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
-      href="https://cv.visamalog.com"
+      href={cvUrl}
       target="_blank"
       rel="noopener noreferrer"
     >
