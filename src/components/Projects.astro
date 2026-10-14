@@ -10,7 +10,6 @@ import AstroIcon from '@/components/icons/AstroSVG.astro'
 import LinkIcon from '@/components/icons/Link.astro'
 import ReactIcon from '@/components/icons/React.astro'
 import ElectronIcon from '@/components/icons/Electron.astro'
-import SvelteIcon from '@/components/icons/Svelte.astro'
 import ReactNativeIcon from '@/components/icons/React.astro'
 import AppwriteIcon from '@/components/icons/Appwrite.astro'
 import SupabaseIcon from '@/components/icons/Supabase.astro'
@@ -40,11 +39,6 @@ const TAGS = {
     name: "Electron",
     class: "bg-[#2F3242] text-white",
     icon: ElectronIcon,
-  },
-  SVELTE: {
-    name: "Svelte",
-    class: "bg-[#2F3242] text-white",
-    icon: SvelteIcon,
   },
   REACTNATIVE: {
     name: "React Native",
@@ -86,11 +80,11 @@ const DESCRIPTIONS = {
     'ga': 'Enciclopedia de items do xogo Wakfu. A API proporciónaa o desenvolvedor "Ankama" en forma de arquivos JSON.'
   },
   'viplay': {
-    'en': 'Music player with my favourite playlists. A Spotify clone made with Astro using React and Svelte components. Zustand for the store and tried to use Typescript as much as I could.',
-    'es': 'Reproductor de música con mis listas favoritas. Un clon de Spotify hecho con Astro usando componentes de React y Svelte. Zustand para el estado e intentando usar TypeScript al máximo.',
-    'de': 'Musikplayer mit meinen Lieblings-Playlists. Ein Spotify-Klon mit Astro und React- und Svelte-Komponenten. Zustand für den Store und möglichst viel TypeScript.',
-    'ja': 'お気に入りのプレイリストを楽しめるミュージックプレイヤー。React と Svelte コンポーネントを使った Astro 製 Spotify クローン。状態管理は Zustand、できる限り TypeScript を使用。',
-    'ga': 'Reprodutor de música coas miñas listas favoritas. Un clon de Spotify feito con Astro usando compoñentes de React e Svelte. Zustand para o estado e o máximo posible de TypeScript.'
+    'en': 'Music player with my favourite playlists. A Spotify clone made with Astro using React components. Zustand for the store and tried to use Typescript as much as I could.',
+    'es': 'Reproductor de música con mis listas favoritas. Un clon de Spotify hecho con Astro usando componentes de React. Zustand para el estado e intentando usar TypeScript al máximo.',
+    'de': 'Musikplayer mit meinen Lieblings-Playlists. Ein Spotify-Klon mit Astro und React-Komponenten. Zustand für den Store und möglichst viel TypeScript.',
+    'ja': 'お気に入りのプレイリストを楽しめるミュージックプレイヤー。React コンポーネントを使った Astro 製 Spotify クローン。状態管理は Zustand、できる限り TypeScript を使用。',
+    'ga': 'Reprodutor de música coas miñas listas favoritas. Un clon de Spotify feito con Astro usando compoñentes de React. Zustand para o estado e o máximo posible de TypeScript.'
   },
   'visamanote': {
     'en': 'Notes desktop application made with Electron and React.',
@@ -157,7 +151,7 @@ const PROJECTS: Project[] = [
     link: 'https://pokedex.visamalog.com/',
     github: 'https://github.com/Visama396/PokedexWeb',
     image: "/projects/pokedex.webp",
-    tags: [TAGS.ASTRO, TAGS.TAILWIND]
+    tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND, TAGS.SUPABASE]
   },
   {
     id: 'wakpedia',
@@ -173,7 +167,7 @@ const PROJECTS: Project[] = [
     link: 'https://viplay.visamalog.com/',
     github: 'https://github.com/Visama396/viplay',
     image: "/projects/viplay.webp",
-    tags: [TAGS.ASTRO, TAGS.REACT, TAGS.SVELTE, TAGS.TAILWIND]
+    tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND, TAGS.SUPABASE]
   },
   {
     id: 'visamanote',
